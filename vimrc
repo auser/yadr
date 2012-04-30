@@ -16,6 +16,35 @@ endif
   call pathogen#infect()
   call pathogen#helptags()
 
+" ================ Vundle Config ========================
+" Use Vundle too
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+ " let Vundle manage Vundle
+ " required! 
+ Bundle 'gmarik/vundle'
+ Bundle "Erlang-plugin-package"
+  " My Bundles here:
+ "
+ " original repos on github
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'Lokaltog/vim-easymotion'
+ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+ Bundle 'tpope/vim-rails.git'
+ " vim-scripts repos
+ Bundle 'L9'
+ Bundle 'FuzzyFinder'
+ Bundle 'Processing'
+ Bundle 'processing-snipmate'
+ Bundle 'VimClojure'
+ Bundle 'tslime.vim'
+
+ " non github repos
+ Bundle 'git://git.wincent.com/command-t.git'
+
+
 " ================ General Config ====================
 
 set number                      "Line numbers are good
