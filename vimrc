@@ -40,6 +40,7 @@ endif
  Bundle 'processing-snipmate'
  Bundle 'VimClojure'
  Bundle 'tslime.vim'
+Bundle "https://github.com/liquidz/lein-vim.git"
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
