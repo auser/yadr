@@ -8,3 +8,4 @@ vim/tmp
 .netrwhist
 bin/subl
 tags
+vim/bundle
