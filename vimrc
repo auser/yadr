@@ -19,13 +19,14 @@ endif
 " ================ Vundle Config ========================
 " Use Vundle too
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 
  " let Vundle manage Vundle
  " required! 
  Bundle 'gmarik/vundle'
- Bundle "Erlang-plugin-package"
+ " Bundle "Erlang-plugin-package"
   " My Bundles here:
  "
  " original repos on github
