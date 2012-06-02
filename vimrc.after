@@ -51,7 +51,7 @@ let g:clojure_simplefold_nestable_end_expr = '\v^\s*$'
 " ---------------------------------------------------------------------------
 "  configuration for fuzzyfinder
 " find in buffer is ,b
-nmap <LocalLeader>b :FuzzyFinderBuffer<CR>
+nmap <LocalLeader>b :FufBuffer<CR>
 " see: http://github.com/viperinthought/fuzzyfinder_textmate/
 " FuzzyFinderTextMate is broken at the moment due to vim patches
 "nmap <LocalLeader>f :FuzzyFinderTextMate<CR>
@@ -62,7 +62,7 @@ nmap <LocalLeader>f :CommandT<CR>
 "nmap <LocalLeader>F :FuzzyFinderFile<CR>
 nmap <LocalLeader>F :CommandT<CR>
 " find in tag is ,t
-nmap <LocalLeader>t :FuzzyFinderTag<CR>
+"nmap <LocalLeader>t :FuzzyFinderTag<CR>
 
 " Run the current file with rspec
 map <Leader>rb :call RunVimTmuxCommand("clear; rspec " . bufname("%"))<CR>
@@ -82,3 +82,5 @@ map <Leader>rx :CloseVimTmuxPanes<CR>
 " Interrupt any command running in the runner pane
 map <Leader>rs :InterruptVimTmuxRunner<CR>
 
+" NERDTree
+map <LocalLeader>\ :NERDTreeToggle<CR>
