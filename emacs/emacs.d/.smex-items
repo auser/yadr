@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ markdown-mode
+ package-install
+ buffer-menu
+ enable-theme
+ package-list-packages
+ cd
+ 5x5
+)
+
+;; ----- smex-data -----
+(
+ (package-list-packages . 1)
+ (enable-theme . 2)
+ (color-theme-solarized . 3)
+ (buffer-menu . 1)
+ (package-install . 1)
+ (markdown-mode . 1)
+)
