@@ -8,8 +8,11 @@ vim/tmp
 bin/subl
 tags
 vim/bundle
-emacs/emacs.d/backups
+emacs/emacs.d/backups/
 emacs/emacs.d/elpa
 emacs/emacs.d/abbrev_defs
 emacs/emacs.d/auto-save-list
 emacs/emacs.d/swank
+emacs/emacs.d/.smex-items
+emacs/emacs.d/places
+emacs/emacs.d/backups\/
