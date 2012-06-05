@@ -1,5 +1,7 @@
-(add-to-list 'load-path "~/.emacs.d/packages/")
+(setq make-root "")
 
+(add-to-list 'load-path "~/.emacs.d/packages/")
+(require 'custom)
 (require 'cl)
 
 ; marmalade
@@ -12,7 +14,7 @@
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
                       starter-kit-bindings scpaste
                       clojure-mode clojure-test-mode
-                      paredit
+                      paredit solarized-theme
                       markdown-mode yaml-mode tuareg                                                                                                                                  
                       marmalade oddmuse scpaste))
 
@@ -22,9 +24,6 @@
 
 (setq-default inhibit-startup-screen t)
 (autoload 'slime-selector "slime" t)
-
-(setq custom-file "~/.emacs.d/custom.el")
-(load custom-file 'noerror)
 
 ;; Of course, don't uncomment the line below -- doing so would
 ;; stop Emacs from helpfully leaving "foo~" (backup) files all
@@ -46,7 +45,5 @@
 (global-set-key "\M-n" 'scroll-up-line)
 (global-set-key "\M-p" 'scroll-down-line)
 
-;; Comment this out if you'd prefer the default color theme, or
-;; change it if you'd prefer a different color theme.
-(load-theme 'zenburn t)
-
+(setq after-file "~/.emacs.d/after.el")
+(load after-file 'noerror)
