@@ -1,5 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/packages/")
 
+(require 'cl)
+
 ; marmalade
 (require 'package) 
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) (package-initialize)
@@ -19,6 +21,10 @@
           (package-install p)))
 
 (setq-default inhibit-startup-screen t)
+(autoload 'slime-selector "slime" t)
+
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file 'noerror)
 
 ;; Of course, don't uncomment the line below -- doing so would
 ;; stop Emacs from helpfully leaving "foo~" (backup) files all

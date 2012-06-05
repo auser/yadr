@@ -2,6 +2,10 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/Users/auser/.yadr/emacs/" . "emacs.d/")
+ ("/Users/auser/.yadr/" . "emacs/")
+ ("/Users/auser/Development/clojure/mine/teststststst/test/" . "teststststst/")
+ ("/Users/auser/Development/clojure/mine/teststststst/src/" . "teststststst/")
  ("/tmp/" . "gist-0852899c/")
  ("/Users/auser/.emacs.d/" . "config/")
  ("/Users/auser/Development/work/mhealth/" . "gist-5eb6bd6c/")
@@ -11,20 +15,24 @@
  ("/Users/auser/Development/ruby/mine/" . "airfoil/")
  ("/Users/" . "auser/")
  ("/Users/auser/Development/ruby/" . "mine/")
- ("/Users/auser/" . ".emacs.d/")
+ ("/Users/auser/" . ".yadr/")
  ("/Users/auser/Development/clojure/mine/tigerbeer/checkouts/" . "letsparty/")
  ("/Users/auser/Development/clojure/mine/tigerbeer/" . "src/")
- ("/Users/auser/Development/clojure/mine/" . "tigerbeer/")
+ ("/Users/auser/Development/clojure/mine/" . "teststststst/")
  ("/Users/auser/Development/clojure/" . "mine/")
  ("/Users/auser/Development/" . "javascript/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/Users/auser/.emacs.d/"
+ "/Users/auser/.yadr/emacs/emacs.d/"
+ "/Users/auser/Development/clojure/mine/teststststst/"
+ "/Users/auser/Development/clojure/mine/teststststst/src/teststststst/"
+ "/Users/auser/Development/clojure/mine/teststststst/test/teststststst/test/"
  "/tmp/gist-0852899c/"
  "/Users/auser/Development/c/mine/toys/src/"
  "/Users/auser/.emacs.d/config/"
- "/Users/auser/.emacs.d/"
  "/Users/auser/"
  "/Users/auser/Development/ruby/mine/airfoil/src/"
  "/Users/auser/Applications/{415477e9-cabf-43fb-b595-92b54c4a51cb} Applications.localized/Accessibility On-Screen Keyboard.app/Contents/"
@@ -40,21 +48,43 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "init.el"
+ "custom.el"
+ "project.clj"
+ "core.clj"
  "oauth_client.sh"
  "badge.cpp"
- "custom.el"
- "init.el"
  ".autotest"
  "package.el"
  "airfoil.rb"
  "Info.plist"
- "config.el"
- "auser.el"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/Users/auser/" (20426 26556) "VirtualBox VMs/" "var/" "usr/" "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Mail/" "Library/" "Google Drive/" "epm/" "Dropbox/" "Downloads/" "Documents/" "Development/" "Desktop/" "bin/" "Applications/" ".zshrc.backup" ".zshrc" ".zsh_history" ".zsh-update" ".zprofile" ".zlogout" ".zdirs" ".zcompdump.Macintosh.local.56529" ".zcompdump" ".z" ".yankring-history_v2.txt" ".yadr/" ".Xcode/" ".Xauthority" ".wireshark-etc/" ".wireshark/" ".wgetrc" ".vnc/" ".vmc_token" ".vmc_target" ".viper~" ".viper" ".vimrc.before" ".vimrc.backup" ".vimrc.after" ".vimrc" ".viminfo" ".vim.backup/" ".vim-fuf-data/" ".vim/" ".vagrant.d/" ".unite/" ".Trash/" ".tmux_buffers/" ".tmux.conf" ".swt/" ".subversion/" ".submodule.rb" ".ssh/" ".serverauth.9424" ".semacs.d" ".screenrc" ".scala_history" ".sake" ".rvmrc" ".rvm/" ".rnd" ".rediscli_history" ".recentf" ".rdebug_hist" ".rails.d" ".python-eggs/" ".psql_history" ".pryrc.backup" ".pryrc" ".pry_history" ".pow/" ".pit" ".pip/" ".parallel/" ".osx" ".old_emacs.d/" ".oh-my-zsh/" ".nvm/" ".npmrc" ".npm/" ".node_libraries/" ".node-gyp/" ".NERDTreeBookmarks" ".neocon/" ".multimap-vimrc" ".msf4/" ".m2/" ".local/" ".livereload/" ".lesshst" ".lein/" ".kiwi/" ".kerl/" ".java_history" ".janus/" ".ivy2/" ".irssi/" ".irbrc" ".irb_history" ".irb-history" ".inputrc" ".imagineer_log.txt" ".ido.last~" ".ido.last" ".idlerc/" ".homesick/" ".hgrc" ".hgignore_global" ".heroku/" ".haibuconf" ".gvimrc.old" ".gvimrc.after" ".gvimrc" ".gstreamer-0.10/" ".gnupg/" ".gitignore_global" ".gitignore.backup" ".gitignore" ".gitconfig.backup" ".gitconfig" ".gitattributes" ".git-utils/" ".git-reset-mtimes/" ".gemrc.backup" ".gemrc" ".gem/" ".gdb_history" ".functions" ".forge/" ".forever/" ".fop/" ".fontconfig/" ".fire-app/" ".exports" ".eshell/" ".erlang.cookie" ".erjang/" ".epm" ".emag" ".emacsg" ".emacs.d.backup" ".emacs.d/" ".emacs-starter-kit" ".emacs-places" ".emacs" ".ec2/" ".dvdcss/" ".DS_Store" ".dropbox/" ".dotfiles/" ".dotcloud/" ".dbshell" ".current_cloud_environment" ".cups/" ".ctags" ".config/" ".compass-ui/" ".codeintel/" ".cocoapods/" ".cmd-key-happy.lua" ".clj_history" ".clj_completions" ".cisco/" ".cinderella.profile" ".chef/" ".CFUserTextEncoding" ".cache/" ".bzr.log" ".bundler/" ".brew" ".bin.bak" ".bin/" ".bazaar/" ".bashrc" ".bash_prompt" ".bash_profile_original" ".bash_profile" ".bash_it/" ".bash_history" ".bash_aliases" ".autotest.d/" ".autotest" ".autojump/" ".aprc.backup" ".aprc" ".appletviewer" ".ant/" ".aliases" ".adobe/" "#*mail*#93244zIm#" "#*mail*#8708389l#" "../" "./")
+ ("/Users/auser/.emacs.d/" (20430 15482) "swank/" "places" "packages/" "init.el" "elpa/" "custom.el" "backups/" "auto-save-list/" "abbrev_defs" ".smex-items" ".DS_Store" "../" "./")
+
+ ("/Users/auser/" (20430 15484) "VirtualBox VMs/" "var/" "usr/" "Sites/" "Public/" "Pictures/" "Music/" "Movies/" "Mail/" "Library/" "Google Drive/" "epm/" "Dropbox/" "Downloads/" "Documents/" "Development/" "Desktop/" "bin/" "Applications/" ".zshrc.backup" ".zshrc" ".zsh_history" ".zsh-update" ".zprofile" ".zlogout" ".zdirs" ".zcompdump.Macintosh.local.56529" ".zcompdump" ".z" ".yankring-history_v2.txt" ".yadr/" ".Xcode/" ".Xauthority" ".wireshark-etc/" ".wireshark/" ".wgetrc" ".vnc/" ".vmc_token" ".vmc_target" ".viper~" ".viper" ".vimrc.before" ".vimrc.backup" ".vimrc.after" ".vimrc" ".viminfo" ".vim.backup/" ".vim-fuf-data/" ".vim/" ".vagrant.d/" ".unite/" ".Trash/" ".tmux_buffers/" ".tmux.conf" ".swt/" ".subversion/" ".submodule.rb" ".ssh/" ".slime-history.eld" ".serverauth.9424" ".semacs.d" ".screenrc" ".scala_history" ".sake" ".rvmrc" ".rvm/" ".rnd" ".rediscli_history" ".recentf" ".rdebug_hist" ".rails.d" ".python-eggs/" ".psql_history" ".pryrc.backup" ".pryrc" ".pry_history" ".pow/" ".pit" ".pip/" ".parallel/" ".osx" ".old_emacs.d/" ".oh-my-zsh/" ".nvm/" ".npmrc" ".npm/" ".node_libraries/" ".node-gyp/" ".NERDTreeBookmarks" ".neocon/" ".multimap-vimrc" ".msf4/" ".m2/" ".local/" ".livereload/" ".lesshst" ".lein/" ".kiwi/" ".kerl/" ".java_history" ".janus/" ".ivy2/" ".irssi/" ".irbrc" ".irb_history" ".irb-history" ".inputrc" ".imagineer_log.txt" ".ido.last~" ".ido.last" ".idlerc/" ".homesick/" ".hgrc" ".hgignore_global" ".heroku/" ".haibuconf" ".gvimrc.old" ".gvimrc.after" ".gvimrc" ".gstreamer-0.10/" ".gnupg/" ".gitignore_global" ".gitignore.backup" ".gitignore" ".gitconfig.backup" ".gitconfig" ".gitattributes" ".git-utils/" ".git-reset-mtimes/" ".gemrc.backup" ".gemrc" ".gem/" ".gdb_history" ".functions" ".forge/" ".forever/" ".fop/" ".fontconfig/" ".fire-app/" ".exports" ".eshell/" ".erlang.cookie" ".erjang/" ".epm" ".emag" ".emacsg" ".emacs.d.backup" ".emacs.d/" ".emacs-starter-kit" ".emacs-places" ".emacs" ".ec2/" ".dvdcss/" ".DS_Store" ".dropbox/" ".dotfiles/" ".dotcloud/" ".dbshell" ".current_cloud_environment" ".cups/" ".ctags" ".config/" ".compass-ui/" ".codeintel/" ".cocoapods/" ".cmd-key-happy.lua" ".clj_history" ".clj_completions" ".cisco/" ".cinderella.profile" ".chef/" ".CFUserTextEncoding" ".cache/" ".bzr.log" ".bundler/" ".brew" ".bin.bak" ".bin/" ".bazaar/" ".bashrc" ".bash_prompt" ".bash_profile_original" ".bash_profile" ".bash_it/" ".bash_history" ".bash_aliases" ".autotest.d/" ".autotest" ".autojump/" ".aprc.backup" ".aprc" ".appletviewer" ".ant/" ".aliases" ".adobe/" "../" "./")
+
+ ("/Users/auser/.yadr/emacs/emacs.d/" (20430 15468) "swank/" "places" "packages/" "init.el" "elpa/" "custom.el" "backups/" "auto-save-list/" "abbrev_defs" ".smex-items" ".DS_Store" ".#init.el" ".#custom.el" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/" (20430 15426) "test.clj" "test/" "src/" "README" "project.clj" "lib/" "classes/" ".lein-failures" ".lein-deps-sum" ".gitignore" "../" "./")
+
+ ("/Users/auser/.yadr/emacs/" (20426 26300) "emacs.d/" "../" "./")
+
+ ("/Users/auser/.yadr/" (20426 25670) "zsh/" "vimrc.after" "vimrc" "vim/" "tmux.conf" "ruby/" "README.md" "Rakefile" "osx" "oh-my-zsh/" "irb/" "inputrc" "gvimrc.after" "gvimrc" "git/" "fonts/" "emacs/" "custom/" "chrome/" "bin/" ".yadr" ".gitmodules" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/src/teststststst/" (20430 14135) "core.clj" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/test/teststststst/test/" (20429 3196) "core.clj" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/test/teststststst/" (20429 3196) "test/" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/test/" (20429 3196) "teststststst/" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/" (20429 3196) "tigerbeer/" "teststststst/" "streamgrid.io/" "lib/" "letsparty/" "junk/" "clopt/" "chowder/" "beeswarm/" "beehive.x/" "autotest.rb" ".DS_Store" "../" "./")
+
+ ("/Users/auser/Development/clojure/mine/teststststst/src/" (20429 3196) "teststststst/" "../" "./")
 
  ("/tmp/gist-0852899c/" (20061 14675) "oauth_client.sh" ".git/" "../" "./")
 
@@ -63,8 +93,6 @@
  ("/Users/auser/Development/c/mine/toys/src/" (20045 5521) "camshift.cpp" "badge.cpp" ".DS_Store" "../" "./")
 
  ("/Users/auser/Development/c/mine/toys/" (20044 18811) "src/" "old/" "Makefile" "include/" "images/" "bin/" ".gitignore" ".git/" "../" "./")
-
- ("/Users/auser/.emacs.d/" (20039 24305) "vendor/" "snippets/" "README.textile" "places" "package.el" "init.el" "emacs.el" "elpa/" "config/" "auto-save-list/" ".gitmodules" ".gitignore" "#init.el#" "../" "./")
 
  ("/Users/auser/.emacs.d/config/" (19908 58273) "twitter.el" "theme.el" "sqlplus.el" "shell.el" "ruby.el" "org.el" "modes.el" "javascript.el" "jabber.el" "global.el" "functions.el" "dired.el" "custom.el" "../" "./")
 
@@ -77,8 +105,6 @@
  ("/Users/auser/.emacs.d/auto-save-list/" (20030 8059) "../" "./")
 
  ("/Users/" (20011 63014) "Shared/" "auser/" ".localized" "../" "./")
-
- ("/Users/auser/Development/clojure/mine/" (19794 55374) "tigerbeer/" "letsparty/" "junk/" "clopt/" "beeswarm/" "beehive.x/" "autotest.rb" "../" "./")
 
  ("/Users/auser/Development/" (20013 53364) "work/" "shell/" "scala/" "ruby/" "python/" "personal/" "objective-c/" "node.js/" "nix/" "javascript/" "java/" "html/" "git/" "erlang/" "env/" "conferences/" "cloud/" "clojure/" "c/" ".DS_Store" "../" "./")
 

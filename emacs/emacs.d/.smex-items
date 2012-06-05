@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- paredit-mode
- slime-connect
- clojure-jack-in
- clojure-mode
- enable-paredit-mode
+ buffer-menu
+ gdb-script-mode
+ erase-buffer
+ shell
+ delete-blank-lines
  package-install
- load-theme
+ paredit-mode
 )
 
 ;; ----- smex-data -----
@@ -15,13 +15,18 @@
  (package-list-packages . 1)
  (enable-theme . 2)
  (color-theme-solarized . 3)
- (buffer-menu . 1)
- (package-install . 3)
+ (buffer-menu . 3)
+ (package-install . 4)
  (markdown-mode . 1)
- (clojure-jack-in . 5)
+ (clojure-jack-in . 6)
  (load-theme . 1)
  (enable-paredit-mode . 1)
- (clojure-mode . 1)
- (slime-connect . 1)
+ (clojure-mode . 2)
+ (slime-connect . 2)
  (paredit-mode . 3)
+ (slime . 3)
+ (shell . 2)
+ (delete-blank-lines . 1)
+ (erase-buffer . 2)
+ (gdb-script-mode . 1)
 )
