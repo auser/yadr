@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
- markdown-mode
+ paredit-mode
+ slime-connect
+ clojure-jack-in
+ clojure-mode
+ enable-paredit-mode
  package-install
- buffer-menu
- enable-theme
- package-list-packages
- cd
- 5x5
+ load-theme
 )
 
 ;; ----- smex-data -----
@@ -16,6 +16,12 @@
  (enable-theme . 2)
  (color-theme-solarized . 3)
  (buffer-menu . 1)
- (package-install . 1)
+ (package-install . 3)
  (markdown-mode . 1)
+ (clojure-jack-in . 5)
+ (load-theme . 1)
+ (enable-paredit-mode . 1)
+ (clojure-mode . 1)
+ (slime-connect . 1)
+ (paredit-mode . 3)
 )
