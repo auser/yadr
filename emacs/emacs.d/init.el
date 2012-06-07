@@ -1,7 +1,8 @@
 (setq make-root "")
 
 (add-to-list 'load-path "~/.emacs.d/packages/")
-(require 'custom)
+(add-to-list 'load-path "~/.elisp")
+
 (require 'cl)
 
 ; marmalade
@@ -14,7 +15,7 @@
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
                       starter-kit-bindings scpaste
                       clojure-mode clojure-test-mode
-                      paredit solarized-theme
+                      paredit color-theme solarized-theme
                       markdown-mode yaml-mode tuareg                                                                                                                                  
                       marmalade oddmuse scpaste))
 
@@ -45,5 +46,6 @@
 (global-set-key "\M-n" 'scroll-up-line)
 (global-set-key "\M-p" 'scroll-down-line)
 
+;; Load the after file
 (setq after-file "~/.emacs.d/after.el")
 (load after-file 'noerror)

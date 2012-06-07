@@ -21,3 +21,9 @@
 (global-set-key (kbd "s-<") 'beginning-of-buffer)
 (global-set-key (kbd "s->") 'end-of-buffer)
 (define-key global-map (kbd "RET") 'newline-and-indent)
+
+(require 'color-theme-solarized)
+(color-theme-solarized-dark)
+
+;(require 'color-theme-zenburn)
+;(color-theme-zenburn)
