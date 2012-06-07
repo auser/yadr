@@ -119,3 +119,5 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
+# YADR Bin
+alias emacs='open -a "/Applications/Emacs.app"'
