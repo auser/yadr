@@ -80,6 +80,7 @@ Homebrew is _the missing package manager for OSX_. To install:
 /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
 ```
 
+ 
 With homebrew installed, install some packages:
 
 ```bash
