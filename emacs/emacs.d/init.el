@@ -14,9 +14,9 @@
 
 (defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
                       starter-kit-bindings scpaste
-                      clojure-mode clojure-test-mode
+                      clojure-mode clojure-test-mode ess
                       paredit color-theme solarized-theme
-                      markdown-mode yaml-mode tuareg                                                                                                                                  
+                      markdown-mode yaml-mode tuareg                                                                                      
                       marmalade oddmuse scpaste))
 
 (dolist (p my-packages)
@@ -26,13 +26,16 @@
 (setq-default inhibit-startup-screen t)
 (autoload 'slime-selector "slime" t)
 
+(require 'ess-site)
+
 ;; Of course, don't uncomment the line below -- doing so would
 ;; stop Emacs from helpfully leaving "foo~" (backup) files all
 ;; over the place.
 ;(setq make-backup-files nil)
 
-;; Use only spaces (no tabs at all).
+;; to setup tabs
 (setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
 
 ;; Always show column numbers.
 (setq-default column-number-mode t)
