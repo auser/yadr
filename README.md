@@ -252,7 +252,7 @@ if you don't like them, or make your own.
 ### Vim Keymaps
 
 The files in vim/plugin/settings are customizations stored on a per-plugin
-basis. The main keymap is available in skwp-keymap.vim, but some of the vim
+basis. The main keymap is available in auser-keymap.vim, but some of the vim
 files contain key mappings as well (TODO: probably will move them out to skwp-keymap.vim)
 
 #### Navigation
