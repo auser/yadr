@@ -1,7 +1,7 @@
 require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
-task :install => [:submodules] do
+task :install => [:submodules, :prereqs] do
   puts
   puts "======================================================"
   puts "Welcome to YADR Installation. I'll ask you a few"
@@ -9,6 +9,7 @@ task :install => [:submodules] do
   puts "be overwritten without your consent."
   puts "======================================================"
   puts
+
   # this has all the linkables from this directory.
   linkables = []
   linkables += Dir.glob('git/*') if want_to_install?('git')
@@ -54,6 +55,13 @@ task :install => [:submodules] do
     run %{ ln -s "#{source}" "#{target}" }
   end
   success_msg("installed")
+end
+
+task :prereqs do
+  if `which brew`.empty?
+    puts "Need to install homebrew"
+    `/usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"`
+  end
 end
 
 task :zsh_themes do
