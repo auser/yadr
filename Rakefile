@@ -23,6 +23,7 @@ task :install => [:submodules, :prereqs] do
   linkables += Dir.glob('oh-my-zsh') if want_to_install?('oh-my-zsh')
   linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
   linkables += Dir.glob("irssi") if want_to_install?('irssi')
+
   Rake::Task['zsh_themes'].invoke
 
   skip_all = false
@@ -92,7 +93,7 @@ end
 
 def want_to_install? (section)
   puts "Would you like to install configuration files for: #{section}? [y]es, [n]o"
-  #STDIN.gets.chomp == 'y'
+  STDIN.gets.chomp == 'y'
 end
 
 def success_msg(action)
