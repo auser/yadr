@@ -12,6 +12,9 @@
   old = red bold
   new = green bold
 [alias]
+  # ribbon
+  ribbon = tag --force _ribbon origin/master
+  catchup = log --patch --reverse --topo-order _ribbon..origin/master
   # add
   a = add                           # add
   chunkyadd = add --patch           # stage commits chunk by chunk
