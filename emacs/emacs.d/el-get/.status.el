@@ -1,1 +1,0 @@
-(:el-get "installed" :color-theme "installed" :color-theme-twilight "installed")
