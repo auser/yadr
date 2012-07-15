@@ -16,3 +16,4 @@ emacs/emacs.d/swank
 emacs/emacs.d/.smex-items
 emacs/emacs.d/places
 emacs/emacs.d/backups\/
+emacs/emacs.d/el-get

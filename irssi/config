@@ -47,6 +47,14 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
+  },
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
   }
 );
 
@@ -116,12 +124,15 @@ chatnets = {
   SILC = { type = "SILC"; };
   cb = { type = "IRC"; };
   "irc.tfoundry.com" = { type = "IRC"; };
+  freenode = { type = "IRC"; };
 };
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "#team"; chatnet = "cb"; autojoin = "yes"; }
+  { name = "#team"; chatnet = "cb"; autojoin = "yes"; },
+  { name = "#algorillas"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ifttt"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
