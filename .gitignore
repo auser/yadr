@@ -17,4 +17,3 @@ emacs/emacs.d/.smex-items
 emacs/emacs.d/places
 emacs/emacs.d/backups\/
 emacs/emacs.d/el-get
-vim/bundle/vundle
