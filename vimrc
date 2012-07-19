@@ -1,6 +1,7 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
 
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
@@ -12,13 +13,12 @@ endif
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
 
-"  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-"  call pathogen#infect()
-"  call pathogen#helptags()
+" runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
+" call pathogen#infect()
+" call pathogen#helptags()
 
 " ================ Vundle Config ========================
 " Use Vundle too
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -26,7 +26,7 @@ call vundle#rc()
  " let Vundle manage Vundle
  " required! 
  Bundle 'gmarik/vundle'
- " Bundle "Erlang-plugin-package"
+ Bundle "Erlang-plugin-package"
   " My Bundles here:
  "
  " original repos on github
@@ -41,7 +41,10 @@ call vundle#rc()
  Bundle 'processing-snipmate'
  Bundle 'VimClojure'
  Bundle 'tslime.vim'
-Bundle "https://github.com/liquidz/lein-vim.git"
+ Bundle "https://github.com/liquidz/lein-vim.git"
+ Bundle "EasyMotion"
+ Bundle "arpeggio"
+ Bundle "solarized"
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'
