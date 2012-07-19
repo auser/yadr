@@ -87,7 +87,7 @@ alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 alias gt='git t'
-alias gupdateall="find . -type d -maxdepth 1 -exec bash -c \"cd '{}' && if [ -d \$PWD'/.git' ]; then echo 'updating ' \$PWD; git pull origin master 2>/dev/null; fi\" \;"
+alias gupdateall="find . -type d -maxdepth 1 -exec bash -c \"cd '{}' && if [ -d \\$PWD'/.git' ]; then echo 'updating ' \\$PWD; git pull origin master 2>/dev/null; fi\" \;"
 
 # Common shell functions
 alias less='less -r'
@@ -121,4 +121,4 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 alias todo='open nvalt://find/todo'
 
 # YADR Bin
-alias emacs='open -a "/Applications/Emacs.app"'
+# alias emacs='open -a "/Applications/Emacs.app"'
