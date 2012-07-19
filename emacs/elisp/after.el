@@ -37,8 +37,8 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; Set the theme
-(require 'color-theme)
-(load-theme 'solarized-dark t)
+;;(require 'color-theme)
+;;(load-theme 'solarized-dark t)
 
 ;; CommandT
 (defun find-dired-project (dir)

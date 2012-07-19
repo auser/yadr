@@ -12,9 +12,9 @@ endif
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
 
-  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-  call pathogen#infect()
-  call pathogen#helptags()
+"  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
+"  call pathogen#infect()
+"  call pathogen#helptags()
 
 " ================ Vundle Config ========================
 " Use Vundle too
