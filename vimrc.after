@@ -14,9 +14,9 @@ syntax on
 filetype plugin indent on
 
 " Command-T
-noremap <leader>o <Esc>:CommandT<CR>
-noremap <leader>O <Esc>:CommandTFlush<CR>
-noremap <leader>m <Esc>:CommandTBuffer<CR>
+"noremap <leader>o <Esc>:CommandT<CR>
+"noremap <leader>O <Esc>:CommandTFlush<CR>
+"noremap <leader>m <Esc>:CommandTBuffer<CR>
 
 vmap ,c y:exe "!tmux send-keys -t 1 " . '"' . substitute(substitute(substitute(@","\","\\\\\","g"),"\n","\" C-m \","g"),"#","\\\\\#","g") . '"'<CR><CR>
 nmap ,c Vy:exe "!tmux send-keys -t 1 " . '"' . substitute(substitute(substitute(@","\","\\\\\","g"),"\n","\" C-m \","g"),"#","\\\\\#","g") . '"'<CR><CR>

@@ -28,7 +28,6 @@
 ;; trying el-get
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")  (unless (require 'el-get nil t) (url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el" (lambda (s) (goto-char (point-max)) (eval-print-last-sexp))))
 
-
 (setq-default inhibit-startup-screen t)
 (autoload 'slime-selector "slime" t)
 
@@ -58,6 +57,7 @@
 ;; Load the after file
 (setq after-file "~/.elisp/after.el")
 (load after-file 'noerror)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,8 +71,3 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'scroll-left 'disabled nil)
-
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
-  (url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-                (lambda (s) (goto-char (point-max)) (eval-print-last-sexp))))

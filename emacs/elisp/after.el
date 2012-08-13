@@ -27,8 +27,6 @@
     (set-face-attribute 'default nil :font "Menlo-12"))
   )
 
-(set-default-font "Menlo-12")
-
 ;; Buffers
 (global-set-key (kbd "s-{") 'previous-buffer)
 (global-set-key (kbd "s-}") 'next-buffer)
@@ -36,60 +34,34 @@
 (global-set-key (kbd "s->") 'end-of-buffer)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; Set the theme
-;;(require 'color-theme)
-;;(load-theme 'solarized-dark t)
-
 ;; el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(unless (require 'el-get nil t)
-  (url-retrieve
-    "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-    (lambda (s)
-      (end-of-buffer)
-      (eval-print-last-sexp))))
-
-(el-get 'sync)
-
+(require 'init-el-get)
+(require 'init-c)
 ;; CommandT
-(defun find-dired-project (dir)
-  (interactive "D")
-  (find-dired dir "-no -path '*/.svn*' -not -path '*/.git*' -and -not -path '*.o' -and -type f"))
+(require 'init-command-t)
+(require 'init-erlang)
 
-(global-set-key "\C-xd" 'find-dired-project)
+(setq-default inhibit-startup-screen t)
 
-;; Compilation
-(defun my-save-and-compile ()
-  "Save current buffer and issue compile."
-  (interactive "")
-  (save-buffer 0)
-  (compile (concat "make -j2 -k -C " make-root)))
+;; Of course, don't uncomment the line below -- doing so would
+;; stop Emacs from helpfully leaving "foo~" (backup) files all
+;; over the place.
+                                        ;(setq make-backup-files nil)
 
-(defun my-c-mode-hook ()
-;; (c-toggle-auto-state 1)
- 
-  (c-toggle-hungry-state 1)
-  (my-indent-setup)
-  ;; keys
-  ;; (local-set-key (kbd "RET") 'reindent-then-newline-and-indent)
-  ;; (local-set-key (kbd "<C-tab>") 'sourcepair-load)
-  (local-set-key "\C-c\C-c" 'my-save-and-compile)
+;; Use only spaces (no tabs at all).
+(setq-default indent-tabs-mode nil)
 
-  ;; (local-set-key (kbd "<M-return>") 'semantic-ia-complete-symbol)
-  ;; (local-set-key (kbd "<C-return>") 'senator-complete-symbol)
+;; Always show column numbers.
+(setq-default column-number-mode t)
 
-  ;; (local-set-key "\C-c?" 'semantic-ia-complete-symbol-menu)
-  ;; (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
-  ;; (local-set-key "\C-cs" 'semantic-symref)
-  ;; (local-set-key "\C-c." 'semantic-ia-fast-jump)
-  ;; (local-set-key "\C-cd" 'semantic-ia-show-doc)
+;; Display full pathname for files.
+(add-hook 'find-file-hooks
+          '(lambda ()
+             (setq mode-line-buffer-identification 'buffer-file-truename)))
 
-  ;; (local-set-key "\M-A" 'senator-previous-tag)
-  ;; (local-set-key "\M-E" 'senator-next-tag)
-  ;; (c-set-offset 'innamespace 0)
-;; (indent-file-when-save)
-;; (indent-file-when-visit)
-)
+;; For easy window scrolling up and down.
+(global-set-key "\M-n" 'scroll-up-line)
+(global-set-key "\M-p" 'scroll-down-line)
 
-(add-hook 'c-mode-common-hook 'my-c-mode-hook)
 
+(load-theme 'solarized-dark t)
