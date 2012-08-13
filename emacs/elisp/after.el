@@ -63,5 +63,3 @@
 (global-set-key "\M-n" 'scroll-up-line)
 (global-set-key "\M-p" 'scroll-down-line)
 
-
-(load-theme 'solarized-dark t)

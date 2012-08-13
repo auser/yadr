@@ -3,3 +3,5 @@
   (find-dired dir "-no -path '*/.svn*' -not -path '*/.git*' -and -not -path '*.o' -and -type f"))
 
 (global-set-key "\C-xd" 'find-dired-project)
+
+(provide 'init-command-t)

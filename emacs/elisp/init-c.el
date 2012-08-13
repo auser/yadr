@@ -1,4 +1,4 @@
-(DEFUN my-save-and-compile ()
+(defun my-save-and-compile ()
   "Save current buffer and issue compile."
   (interactive "")
   (save-buffer 0)
@@ -31,3 +31,4 @@
 )
 
 (add-hook 'c-mode-common-hook 'my-c-mode-hook)
+(provide 'init-c)
