@@ -20,3 +20,4 @@ emacs/emacs.d/el-get
 bin/sbt
 vim/bundle/vundle
 keys
+emacs/emacs.d/el-get.backup-3.stable/*
