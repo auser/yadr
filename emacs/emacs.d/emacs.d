@@ -1,1 +1,0 @@
-/Users/auser/.yadr/emacs/emacs.d

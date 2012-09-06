@@ -45,6 +45,8 @@ call vundle#rc()
  Bundle "EasyMotion"
  Bundle "arpeggio"
  Bundle "solarized"
+ Bundle "scrooloose/nerdtree"
+ Bundle 'repos-scala/scala-vundle'
 
  " non github repos
  Bundle 'git://git.wincent.com/command-t.git'

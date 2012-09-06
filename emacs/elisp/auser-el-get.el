@@ -25,12 +25,20 @@
         (:name clojure-mode)
         ;; scala
         (:name scala-mode)
+        ;; ensime
+        (:name "ensime"
+               :description "ENhanced Scala Interaction Mode for Emacs"
+               :type git
+               :url "git://github.com/aemoncannon/ensime.git")
         ;; major mode for editing CMake config files
         (:name cmake-mode)
         ; ;; Anything - candidate selection framework
         (:name anything)
         ; ;; yasnippet
-        ; (:name yasnippet)
+        (:name "yasnippet"
+               :description "YASnippet is a template system for Emacs."
+               :type git
+               :url "https://github.com/capitaomorte/yasnippet")
         ; ;; a better (ido like) M-x
         (:name smex)
         (:name vimpulse)

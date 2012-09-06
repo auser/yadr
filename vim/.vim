@@ -1,1 +1,0 @@
-/Users/auser/.homesick/repos/technicalpickles/pickled-vim/home/.vim

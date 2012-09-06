@@ -24,7 +24,8 @@ task :install => [:submodules, :prereqs] do
   linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
   linkables += Dir.glob("irssi/irssi") if want_to_install?('irssi')
   linkables += Dir.glob("irssi/*") if want_to_install?('irssi')
-  
+  linkables += Dir.glob("apps/*/bin/*") if want_to_install?('apps')  
+
   Rake::Task['zsh_themes'].invoke
 
   skip_all = false
