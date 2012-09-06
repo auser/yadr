@@ -26,12 +26,24 @@
         ;; scala
         (:name scala-mode)
         ;; ensime
-        (:name "ensime"
+        (:name ensime
                :description "ENhanced Scala Interaction Mode for Emacs"
-               :type git
-               :url "git://github.com/aemoncannon/ensime.git")
+               :type github
+               :pkgname "aemoncannon/ensime"
+               :build ("sbt update stage")
+               :depends scala-mode
+               :features ensime
+               :load-path ("./src/main/elisp")
+               :post-init (progn
+                            (require 'ensime)
+                                                ;; scala-mode can be
+                            ;; found in the scala distribution:
+                            (require 'scala-mode-auto)
+                                                (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
         ;; major mode for editing CMake config files
         (:name cmake-mode)
+        ;; Multiterm
+        (:name multi-term)
         ; ;; Anything - candidate selection framework
         (:name anything)
         ; ;; yasnippet
@@ -41,7 +53,7 @@
                :url "https://github.com/capitaomorte/yasnippet")
         ; ;; a better (ido like) M-x
         (:name smex)
-        (:name vimpulse)
+        ; (:name vimpulse)
         (:name color-theme-solarized)
         ; (:name ensime :url "https://github.com/auser/ensime.git")
         (:name elein)

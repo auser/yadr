@@ -1,6 +1,10 @@
 ;; el-get
 (require 'auser-el-get)
+(require 'auser-helpers)
+
+;; Display
 (require 'auser-display)
+(require 'auser-shell)
 (require 'auser-c)
 ;; CommandT
 (require 'auser-command-t)

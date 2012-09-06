@@ -68,7 +68,7 @@ erc-robot.el:
 	curl -O $(EMACSWIKI_DOWNLOAD)/erc-robot.el # $
 
 espresso.el:
-	curl -O http://download.savannah.gnu.org/releases-noredirect/espresso/espresso.el
+	curl -O http://download-mirror.savannah.gnu.org/releases/espresso/espresso.el
 eudcb-mab.el:
 	curl -O http://braeburn.aquamacs.org/code/master/lisp/net/eudcb-mab.el
 fillcode.el:
