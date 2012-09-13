@@ -47,10 +47,10 @@ call vundle#rc()
  Bundle "solarized"
  Bundle "scrooloose/nerdtree"
  Bundle 'repos-scala/scala-vundle'
+ Bundle 'jistr/vim-nerdtree-tabs'
 
  " non github repos
- Bundle 'git://git.wincent.com/command-t.git'
-
+ Bundle 'git://github.com/wincent/Command-T.git'
 
 " ================ General Config ====================
 
@@ -144,3 +144,6 @@ set sidescroll=1
 for f in split(glob('~/.vim/plugin/settings/*.vim'), '\n')
   exe 'source' f
 endfor
+
+" ================ NERDTree =========================
+autocmd vimenter * NERDTree

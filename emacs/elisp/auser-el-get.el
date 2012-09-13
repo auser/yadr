@@ -5,13 +5,17 @@
 (setq el-get-sources
       '(
         (:name buffer-move      ; have to add your own keys
-          :after (lambda ()
+          :after (progn ()
             (global-set-key (kbd "<C-S-up>")     'buf-move-up)
             (global-set-key (kbd "<C-S-down>")   'buf-move-down)
             (global-set-key (kbd "<C-S-left>")   'buf-move-left)
             (global-set-key (kbd "<C-S-right>")  'buf-move-right)))
         (:name el-get)
         (:name package)
+        ;;
+        (:name ecb)
+        (:name eproject)
+        (:name sr-speedbar)
         ;; numbered windows for easy switching, takes over C-x o
         ;; elpa version has no autoloads, so use the el-get version
         (:name switch-window)
@@ -53,6 +57,8 @@
                :url "https://github.com/capitaomorte/yasnippet")
         ; ;; a better (ido like) M-x
         (:name smex)
+        ;
+        (:name ac-slime)
         ; (:name vimpulse)
         (:name color-theme-solarized)
         ; (:name ensime :url "https://github.com/auser/ensime.git")

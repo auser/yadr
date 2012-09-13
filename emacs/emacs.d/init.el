@@ -5,33 +5,11 @@
 
 (require 'cl)
 
-; marmalade
-(require 'package) 
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/")) (package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
-;paredit ;color-theme solarized-theme
-
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-eshell
-                      starter-kit-bindings scpaste
-                      clojure-mode clojure-test-mode ess
-                      paredit 
-                      markdown-mode yaml-mode tuareg                                                                                      
-                      marmalade oddmuse scpaste))
-
-(dolist (p my-packages)
-    (when (not (package-installed-p p))
-          (package-install p)))
-
 ;; trying el-get
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")  (unless (require 'el-get nil t) (url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el" (lambda (s) (goto-char (point-max)) (eval-print-last-sexp))))
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")  (unless (require 'el-get nil t) (url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el" (progn (s) (goto-char (point-max)) (eval-print-last-sexp))))
 
 (setq-default inhibit-startup-screen t)
 (autoload 'slime-selector "slime" t)
-
-(require 'ess-site)
 
 ;; Of course, don't uncomment the line below -- doing so would
 ;; stop Emacs from helpfully leaving "foo~" (backup) files all
