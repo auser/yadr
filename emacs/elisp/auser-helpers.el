@@ -25,3 +25,22 @@ and their terminal equivalents.")
 (global-set-key (key "M-<down>") 'windmove-down)          ; move to downer window
   
 (provide 'auser-helpers)
+
+;; ecb
+(setq stack-trace-on-error t)
+; (ecb-activate)
+; (ecb-byte-compile)
+(custom-set-variables
+;; custom-set-variables was added by Custom.
+;; If you edit it by hand, you could mess it up, so be careful.
+;; Your init file should contain only one such instance.
+;; If there is more than one, they won't work right.
+  '(ecb-layout-name "left14")
+  '(ecb-layout-window-sizes (quote (("left14" (0.2564102564102564 . 0.6949152542372882) (0.2564102564102564 . 0.23728813559322035)))))
+  '(ecb-options-version "2.40")
+  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--C-mouse-1))
+  '(ecb-tip-of-the-day nil)
+  '(ecb-tree-buffer-style (quote ascii-guides)))
+
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+(auto-complete-mode)

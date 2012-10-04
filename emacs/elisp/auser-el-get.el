@@ -2,6 +2,12 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 ; (setq auser:el-get-packages (loop for src in el-get-sources
 ;                                   collect (el-get-source-name src)))
+;starter-kit starter-kit-lisp starter-kit-eshell
+;                       starter-kit-bindings scpaste
+;                       clojure-mode clojure-test-mode ess
+;                       paredit 
+;                       markdown-mode yaml-mode tuareg                                                                                      
+;                       marmalade oddmuse scpaste
 (setq el-get-sources
       '(
         (:name buffer-move      ; have to add your own keys
@@ -14,7 +20,15 @@
         (:name package)
         ;;
         (:name ecb)
+        (:name nav
+               :description "Emacs mode for filesystem navigation"
+               :type git
+               :url "git://github.com/macsf/emacs-nav.git"
+               :features nav)
+        (:name icomplete+)
+        ; (:name cedet)
         (:name eproject)
+        (:name paredit)
         (:name sr-speedbar)
         ;; numbered windows for easy switching, takes over C-x o
         ;; elpa version has no autoloads, so use the el-get version
@@ -25,6 +39,14 @@
         (:name haml-mode)
         ;; major mode for markdown markup
         (:name markdown-mode)
+        ;; YAML
+        (:name yaml-mode)
+        ;; nrepl
+        ; (:name nrepl)
+        ;; tuareg-mode
+        (:name tuareg-mode)
+        ;; oddmuse
+        (:name oddmuse)
         ;; major mode for clojure
         (:name clojure-mode)
         ;; scala
@@ -34,10 +56,10 @@
                :description "ENhanced Scala Interaction Mode for Emacs"
                :type github
                :pkgname "aemoncannon/ensime"
-               :build ("sbt update stage")
+               :build ("sbt stage")
                :depends scala-mode
                :features ensime
-               :load-path ("./src/main/elisp")
+               :load-path ("./dist_2.9.2/elisp") ;; src/main
                :post-init (progn
                             (require 'ensime)
                                                 ;; scala-mode can be

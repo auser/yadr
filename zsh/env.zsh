@@ -1,0 +1,1 @@
+export GNUTERM=x11
