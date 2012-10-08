@@ -70,8 +70,8 @@ nmap <silent> <leader>ii :set invrelativenumber<CR>
 
 nmap ; :
 
-set foldmethod=syntax
-set foldlevelstart=2
+" set foldmethod=syntax
+" set foldlevelstart=2
 filetype on           " Enable filetype detection
 filetype plugin on    " Enable filetype-specific plugins
 filetype indent on    " Enable filetype-specific indenting

@@ -1,1 +1,79 @@
+configuration,v
+conf,v
+,V
+  linkables += Dir.glob('emacs/*') if want_to_install?('emacs'),V
+  linkables += Dir.glob('{vim,vimrc,vimrc.before,vimrc.after,gvimrc.before,gvimrc.before,gvimrc,gvimrc.after}') if want_to_install?('vim'),V
+  linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)'),V
+  linkables += Dir.glob('tmux') if want_to_install?('tmux configuration'),V
+.,v
+  linkables += Dir.glob('tmux.conf') if want_to_install?('tmux configuration'),V
+  linkables += Dir.glob("apps/*/bin/*") if want_to_install?('apps')  ,V
+https://github.com/jimeh/tmuxifier.git,v
+ ,v
+;,v
+ProjectViewCellId,v
+TimeScroller,v
+,,v
+3000,v
+-,v
+0,v
+8,v
+/v,V
+8080,v
+app,v
+.createServer(),v
+socketIO,v
+RedisStore  = require('connect-redis')(express),V
+    , "connect-redis: "",V
+    , "hi,V
+:,v
+m,v
+6,v
+3,v
+[,v
+\,v
+9,v
+stylus        = require 'stylus',V
+require 'express-namespace'express       = require 'express'path          = require 'path',V
+/,v
+{  "name": "lender.io",  "version": "0.0.1",  "private": true,  "description": "Lender backend api",  "homepage": "git@bitbucket.org:eigenjoy/lendy_garden.git",  "keywords": [    "lending"    , "loan"  ],  "authors": [    "Ari Lerner <arilerner@mac.com>"    , "Nate Murray <nate@natemurray.com>"  ]  , "maintainers": [    "Ari Lerner <arilerner@mac.com> (http://willcodeforfoo.com)"    , "Nate Murray <nate@natemurray.com>"  ],  "repository": {    "type": "git",    "url": "git@bitbucket.org:eigenjoy/lendy_garden.git"  },  "engines": {    "node": "0.8.x",    "npm": "1.1.x"  },  "dependencies": {    "socket.io": ""    , "express": ""  },  "devDependencies": {    "coffee-script": ""    , "node-dev": ""  },  "scripts": {    "start": "./node_modules/bin/"    , "test": "./"  }},V
+helpers,v
+s,v
+=,v
+coffee ,v
+var ,v
+  },,V
+  "bugs": {,V
+  "contributors": [],,V
+    , "diversion": "",V
+    , "fleet": "",V
+    , "seaport": "",V
+    "scuttlebutt": "",V
+http://github.com/auser/rally.git",v
+    "url": "https://github.com/auser//issues",V
+rally,v
+deployment,v
+application,v
+https://github.com/auser/rally",,v
+application ,v
+-- ,v
+Rally ,v
+{  "author": "Ari Lerner <arilerner at mac.com> and Nate Murray <nate at natemurray.com>",  "name": "lender api",  "description": "Serving rockstar loan officers rockstar data",  "version": "0.0.1",  "homepage": "http://github.com/auser/chatterfly",  "repository": {    "type": "git",    "url": " git@bitbucket.org:eigenjoy/lendy_garden.git"  },  "scripts": {    "test": "cake test",    "devserver": "./node_modules/.  },  "dependencies": {    "muffin": "x.x.x"    ,"zmq": "x.x.x"    ,"hook.io": "x.x.x"  }},V
+git://github.com/auser/chatterfly.git",v
+@,v
+chatterfly,v
+apt-get update --fix-missing,V
+  config.vm.define :scraper do |cfg|  end,V
+)("../deploy/chef/cookbooks", File.dirname(__FILE__)),v
+expand_path,v
+  end,V
+	url = git://github.com/fluxsauce/build-essential.git,V
+[submodule "backend/deploy/chef/cookbooks/build-essential"],V
+	url = git://github.com/opscode-cookbooks/apt.git,V
+[submodule "backend/deploy/chef/cookbooks/apt"],V
+w,v
+      ,V
+    end,V
+",v
+NERDTreeToggle,v
 Bundle 'vim-scripts/YankRing.vim',v
