@@ -32,3 +32,24 @@ fun! s:ToggleMouse()
         echo "Mouse is for terminal"
     endif
 endfunction
+
+" Allow <> tags in script for editing html
+let g:syntastic_mode_map={ 'mode': 'active',
+                     \ 'active_filetypes': [],
+                     \ 'passive_filetypes': ['html'] }
+
+" Trinity
+" Open and close all the three plugins on the same time 
+nmap <F8>  :TrinityToggleAll<CR> 
+
+" Open and close the Source Explorer separately 
+nmap <F9>  :TrinityToggleSourceExplorer<CR> 
+
+" Open and close the Taglist separately 
+nmap <F10> :TrinityToggleTagList<CR> 
+
+" Open and close the NERD Tree separately 
+nmap <F11> :TrinityToggleNERDTree<CR> 
+
+"Enable syntax plugin, yo
+syntax enable

@@ -75,6 +75,9 @@ Bundle 'scrooloose/nerdcommenter'
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
+" Trinity coding
+Bundle 'wesleyche/trinity'
+
 " - Bundle 'msanders/snipmate.vim'
 Bundle 'sjl/splice.vim'
 
@@ -108,6 +111,7 @@ autocmd FileType gitcommit set tw=68 spell
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
     Bundle 'bbommarito/vim-slim'
+		Bundle 'groenewege/vim-less'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -136,3 +140,5 @@ autocmd FileType gitcommit set tw=68 spell
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'cschlueter/vim-wombat'
+    Bundle 'CSApprox'

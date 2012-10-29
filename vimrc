@@ -21,14 +21,14 @@ set bs=2                " Allow backspacing over everything in insert mode
 "set backup             " Keep a backup file
 "set backupdir=~/.vim/backup
 set nobackup
-"set noswapfile
+set noswapfile
 
 set directory=~/.vim/swap
 set viminfo='20,\"500   " read/write a .viminfo file -- limit regs to 500 lines
 set ruler               " Show the cursor position all the time
 set hidden
 
-set nowrap        " don't wrap lines
+set wrap        " don't wrap lines
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set copyindent    " copy the previous indentation on
 set number        " always show line numbers
@@ -136,10 +136,12 @@ inoremap <C-space> <C-x><C-o>
 map Q gq
 if &term=="xterm"
   set t_RV=          " don't check terminal version
-  set t_Co=8
+  set t_Co=256
   set t_Sb=^[4%dm
   set t_Sf=^[3%dm
 endif
+
+set term=xterm-256color
 
 if &term=="xterm-256color"
   set t_Co=256
@@ -148,8 +150,8 @@ if &term=="xterm-256color"
 endif
 
 " Color
-if &t_Co >= 256 || has("gui_running")
-  colorscheme mustang
+if &t_Co >= 256 "|| has("gui_running")
+  colorscheme wombat
 endif
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -168,7 +170,6 @@ if has("gui_running")
   set vb t_vb=
   set guioptions-=T " hide the toolbar
   map <F3> :maca openFileBrowser:<CR>
-  colorscheme mustang
 endif
 
 :if $VIM_CRONTAB == "true"

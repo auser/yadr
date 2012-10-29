@@ -77,6 +77,9 @@
   s = status                        # status
   st = status                       # status
   stat = status                     # status
+  
+  # branch
+  br = branch												# branch
 
   # tag
   t = tag -n                        # show tags with <n> lines of each tag message

@@ -1,79 +1,100 @@
-configuration,v
-conf,v
-,V
-  linkables += Dir.glob('emacs/*') if want_to_install?('emacs'),V
-  linkables += Dir.glob('{vim,vimrc,vimrc.before,vimrc.after,gvimrc.before,gvimrc.before,gvimrc,gvimrc.after}') if want_to_install?('vim'),V
-  linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)'),V
-  linkables += Dir.glob('tmux') if want_to_install?('tmux configuration'),V
-.,v
-  linkables += Dir.glob('tmux.conf') if want_to_install?('tmux configuration'),V
-  linkables += Dir.glob("apps/*/bin/*") if want_to_install?('apps')  ,V
-https://github.com/jimeh/tmuxifier.git,v
  ,v
-;,v
-ProjectViewCellId,v
-TimeScroller,v
-,,v
-3000,v
--,v
-0,v
-8,v
-/v,V
-8080,v
-app,v
-.createServer(),v
-socketIO,v
-RedisStore  = require('connect-redis')(express),V
-    , "connect-redis: "",V
-    , "hi,V
-:,v
-m,v
-6,v
-3,v
-[,v
-\,v
-9,v
-stylus        = require 'stylus',V
-require 'express-namespace'express       = require 'express'path          = require 'path',V
-/,v
-{  "name": "lender.io",  "version": "0.0.1",  "private": true,  "description": "Lender backend api",  "homepage": "git@bitbucket.org:eigenjoy/lendy_garden.git",  "keywords": [    "lending"    , "loan"  ],  "authors": [    "Ari Lerner <arilerner@mac.com>"    , "Nate Murray <nate@natemurray.com>"  ]  , "maintainers": [    "Ari Lerner <arilerner@mac.com> (http://willcodeforfoo.com)"    , "Nate Murray <nate@natemurray.com>"  ],  "repository": {    "type": "git",    "url": "git@bitbucket.org:eigenjoy/lendy_garden.git"  },  "engines": {    "node": "0.8.x",    "npm": "1.1.x"  },  "dependencies": {    "socket.io": ""    , "express": ""  },  "devDependencies": {    "coffee-script": ""    , "node-dev": ""  },  "scripts": {    "start": "./node_modules/bin/"    , "test": "./"  }},V
-helpers,v
-s,v
-=,v
-coffee ,v
-var ,v
-  },,V
-  "bugs": {,V
-  "contributors": [],,V
-    , "diversion": "",V
-    , "fleet": "",V
-    , "seaport": "",V
-    "scuttlebutt": "",V
-http://github.com/auser/rally.git",v
-    "url": "https://github.com/auser//issues",V
-rally,v
-deployment,v
-application,v
-https://github.com/auser/rally",,v
-application ,v
--- ,v
-Rally ,v
-{  "author": "Ari Lerner <arilerner at mac.com> and Nate Murray <nate at natemurray.com>",  "name": "lender api",  "description": "Serving rockstar loan officers rockstar data",  "version": "0.0.1",  "homepage": "http://github.com/auser/chatterfly",  "repository": {    "type": "git",    "url": " git@bitbucket.org:eigenjoy/lendy_garden.git"  },  "scripts": {    "test": "cake test",    "devserver": "./node_modules/.  },  "dependencies": {    "muffin": "x.x.x"    ,"zmq": "x.x.x"    ,"hook.io": "x.x.x"  }},V
-git://github.com/auser/chatterfly.git",v
-@,v
-chatterfly,v
-apt-get update --fix-missing,V
-  config.vm.define :scraper do |cfg|  end,V
-)("../deploy/chef/cookbooks", File.dirname(__FILE__)),v
-expand_path,v
-  end,V
-	url = git://github.com/fluxsauce/build-essential.git,V
-[submodule "backend/deploy/chef/cookbooks/build-essential"],V
-	url = git://github.com/opscode-cookbooks/apt.git,V
-[submodule "backend/deploy/chef/cookbooks/apt"],V
-w,v
-      ,V
-    end,V
+:syntax enable,v
 ",v
-NERDTreeToggle,v
-Bundle 'vim-scripts/YankRing.vim',v
+8,v
+backbone,v
+set -g default-terminal "xterm",v
+http://www.pomodorotechnique.com/book/,v
+B,v
+app,v
+/,v
+	'app/app',V
+,,v
+		app: "app/app",V
+p,v
+a,v
+	'app/app'	], function(_, Backbone, App) {		App.initialize();});,V
+16,v
+dddddd,v
+eeefff,v
+ffffff,v
+eee,v
+white,v
+0,v
+border-radius,v
+	.btn {  	.gradient(#dddddd, #eeeeee, #dddddd);	},V
+fff,v
+  .gradient(#dddddd, #eeeeee, #dddddd);,V
+.gradient(#dddddd, #eeeeee, #dddddd);,v
+},v
+404040,v
+				.rounded(5px);,V
+				background: white;,V
+				padding: 5px;,V
+20px -10px 10px;,v
+        .column(2);,V
+-,v
+			margin-bottom: 20px;,V
+1,v
+2,v
+,V
+},V
+.gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {  background: -moz-linear-gradient(top, @color1, @color2) @extra;  background: -webkit-gradient(@type, @pos1, @pos2, from(@color1), to(@color2)) @extra;  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=@color1, endColorstr=@@color2)";,V
+	background-image: linear-gradient(@origin, @start, @stop);,V
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {	background-color: @start;	background-image: -webkit-linear-gradient(@origin, @start, @stop);	background-image: -moz-linear-gradient(@origin, @start, @stop);	background-image: -o-linear-gradient(@origin, @start, @stop);	background-image: -ms-linear-gradient(@origin, @start, @stop);,V
+e9e9e9,v
+x,v
+7,v
+      .column(4);,V
+5,v
+      .clearfix;,V
+s,v
+		background: blue;,V
+	.row();,V
+	.grid(16);,V
+	.grid-container();,V
+ ,V
+ */,V
+/** * The following 2 mixins would ideally be defined inside the .grid-container * mixin since it isn't relevant in any other scope. There is a bug in LESS * that makes it impossible to nest mixins that don't take arguments so they * are defined globally for now.,V
+ * The first grid inside another grid.,V
+/**,V
+ * The last grid inside another grid.,V
+ * Make an element clear all floats.,V
+.transition(...) {	@props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;	-moz-transition: @props;	-o-transition: @props;	-webkit-transition: @props;	transition: @props;,V
+.columns-width(@n, @width: @grid-width) {,V
+t1, @t2, @t3, @t4, @t5;,v
+@t1, @t2: "", @t3: "", @t4: "", @t5: "") {,v
+.transition(@t1) {	-moz-transition: @t1;	-o-transition: @t1;	-webkit-transition: @t1;	transition: @t1;,V
+linear,v
+opacity ,v
+:0,V
+                                   @color2 100%);,V
+                                   @color1 0%,,V
+  background: -moz-linear-gradient(center bottom,,V
+                                  @color2);,V
+                                  @color1,,V
+  background: -ms-linear-gradient(bottom,,V
+                               top(@color2));,V
+	background: @color1;d4d  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),,V
+$,v
+g,v
+b,v
+d,v
+n,v
+e,v
+t,v
+@,v
+_,v
+.bg-gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
+black,v
+.box_sizing (@type: border-box) {	-webkit-box-sizing: @type;	-moz-box-sizing:    @type;	box-sizing:         @type;}.bg_gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
+// =bg_gradient($color1, $color2, $pos1: left top, $pos2: left bottom, $type: linear, $extra: ""),V
+start,v
+  background: @color;  background: -webkit-gradient(linear,                               left bottom,                               left top,                               color-stop(0, @start),                               color-stop(1, @stop));  background: -ms-linear-gradient(bottom,                                  @start,                                  @stop);  background: -moz-linear-gradient(center bottom,                                   @start 0%,                                   @stop 100%);},v
+vendor,v
+@import "vendor/elements";,V
+x-sizing (@type: border-box) {	-webkit-box-sizing: @type;	-moz-box.-sizing:    @type;	box-sizing:         @type;},V
+-moz-box-sizing: $value  -webkit-box-sizing: $value    box-sizing: $value,V
+_mixins,v
+lib,v
+{,v
