@@ -4,6 +4,8 @@ vim/view
 *un~
 vim/.netrwhist
 vim/tmp
+vim/spell
+vim/after/.vimrc.after
 .netrwhist
 bin/subl
 tags

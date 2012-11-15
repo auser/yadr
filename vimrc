@@ -27,6 +27,9 @@ set directory=~/.vim/swap
 set viminfo='20,\"500   " read/write a .viminfo file -- limit regs to 500 lines
 set ruler               " Show the cursor position all the time
 set hidden
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
 
 set wrap        " don't wrap lines
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
@@ -180,3 +183,6 @@ endif
 
 :so $HOME/.vim/plugins/vim.vim
 :so $HOME/.vim/plugins/editing.vim
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1

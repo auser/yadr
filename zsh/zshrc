@@ -49,3 +49,5 @@ fi
 if [[ -a ~/.secrets ]] then
   source ~/.secrets
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
