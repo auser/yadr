@@ -51,3 +51,6 @@ if [[ -a ~/.secrets ]] then
 fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file

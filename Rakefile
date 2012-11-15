@@ -1,40 +1,12 @@
 require 'rake'
 
 desc "Hook our dotfiles into system-standard positions."
-task :install => [:submodule_init, :submodules, :prereqs] do
+task :install => [:submodule_init, :submodules] do
   puts
   puts "======================================================"
   puts "Welcome to YADR Installation."
   puts "======================================================"
   puts
-
-  # this has all the linkables from this directory.
-  linkables = []
-  linkables += Dir.glob('git/*') if want_to_install?('git')
-  linkables += Dir.glob('irb/*') if want_to_install?('irb/pry')
-  linkables += Dir.glob('tmux.conf') if want_to_install?('tmux configuration')
-  linkables += Dir.glob('tmux/*') if want_to_install?('tmux')
-  linkables += Dir.glob('ruby/*') if want_to_install?('ruby (gems)')
-  linkables += Dir.glob('{vim,vimrc,vimrc.before,vimrc.after,gvimrc.before,gvimrc.before,gvimrc,gvimrc.after}') if want_to_install?('vim')
-  linkables += Dir.glob('emacs/*') if want_to_install?('emacs')
-
-  linkables += Dir.glob('nvm') if want_to_install?('nvm')
-  linkables += Dir.glob('oh-my-zsh') if want_to_install?('oh-my-zsh')
-  linkables += Dir.glob('zsh/zshrc') if want_to_install?('zsh')
-  # linkables += Dir.glob("irssi/irssi") if want_to_install?('irssi')
-  # linkables += Dir.glob("irssi/*") if want_to_install?('irssi')
-  linkables += Dir.glob("apps/*/bin/*") if want_to_install?('apps')  
-
-  Rake::Task['zsh_themes'].invoke
-
-  skip_all = false
-  overwrite_all = false
-  backup_all = false
-
-  linkables.each do |linkable|
-    file = linkable.split('/').last
-    source = "#{ENV["PWD"]}/#{linkable}"
-    target = "#{ENV["HOME"]}/.#{file}"
 
   install_homebrew if RUBY_PLATFORM.downcase.include?("darwin")
   install_rvm_binstubs
@@ -44,9 +16,15 @@ task :install => [:submodule_init, :submodules, :prereqs] do
   file_operation(Dir.glob('irb/*')) if want_to_install?('irb/pry configs (more colorful)')
   file_operation(Dir.glob('ruby/*')) if want_to_install?('rubygems config (faster/no docs)')
   file_operation(Dir.glob('ctags/*')) if want_to_install?('ctags config (better js/ruby support)')
+  file_operation(Dir.glob('tmux.conf')) if want_to_install?('tmux configuration')
   file_operation(Dir.glob('tmux/*')) if want_to_install?('tmux config')
   file_operation(Dir.glob('vimify/*')) if want_to_install?('vimification of command line tools')
   file_operation(Dir.glob('{vim,vimrc}')) if want_to_install?('vim configuration (highly recommended)')
+  file_operation(Dir.glob('emacs/*')) if want_to_install?('Emacs configuration')
+  file_operation(Dir.glob('nvm*')) if want_to_install?('nvm')
+  file_operation(Dir.glob('oh-my-zsh')) if want_to_install?('oh-my-zsh')
+  file_operation(Dir.glob('zsh/zshrc')) if want_to_install?('zsh')
+  file_operation(Dir.glob('apps/*/bin/*')) if want_to_install?('apps')
 
   Rake::Task["install_prezto"].execute
 
@@ -55,20 +33,6 @@ task :install => [:submodule_init, :submodules, :prereqs] do
   success_msg("installed")
 end
 
-task :prereqs do
-  if `which brew`.empty?
-    puts "Need to install homebrew"
-    `/usr/bin/ruby -e "$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)"`
-  end
-end
-
-task :zsh_themes do
-  if File.exist?("#{ENV['HOME']}/.oh-my-zsh/modules/prompt/functions")
-    puts "Detected oh-my-zsh @sorin-ionescu version."
-    run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/modules/prompt/functions/* $HOME/.oh-my-zsh/modules/prompt/functions/ } if want_to_install?('zsh themes')
-  elsif File.exist?("#{ENV['HOME']}/.oh-my-zsh")
-    puts "Detected oh-my-zsh @robbyrussell version."
-    #run %{ ln -nfs #{ENV["PWD"]}/oh-my-zsh/themes/* $HOME/.oh-my-zsh/themes/ } if want_to_install?('zsh themes')
 task :install_prezto do
   if want_to_install?('zsh enhancements & prezto')
     install_prezto

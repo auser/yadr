@@ -291,9 +291,6 @@
 [submodule "nvm"]
 	path = nvm
 	url = git://github.com/creationix/nvm.git
-[submodule "apps/Play20"]
-	path = apps/Play20
-	url = git://github.com/playframework/Play20.git
 [submodule "tmux/tmuxifier"]
 	path = tmux/tmuxifier
 	url = https://github.com/jimeh/tmuxifier.git

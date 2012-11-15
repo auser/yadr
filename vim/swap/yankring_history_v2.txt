@@ -1,3 +1,4 @@
+git remote set-url origin git@github.com:auser/auser.ruhoh.com.gitgit push origin master,V
  ,v
 :syntax enable,v
 ",v
@@ -97,4 +98,3 @@ vendor,v
 -moz-box-sizing: $value  -webkit-box-sizing: $value    box-sizing: $value,V
 _mixins,v
 lib,v
-{,v
