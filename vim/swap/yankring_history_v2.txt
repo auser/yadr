@@ -1,3 +1,14 @@
+random,v
+  file_operation(Dir.glob('tmux.conf')) if want_to_install?('tmux configuration'),V
+plugin,v
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file,V
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file,v
+echo "prompt skwp" > ~/.zsh.after/prompt.zsh,v
+echo $yadr,V
+,V
+autoload -U promptinit,V
+:,v
+command not found: promptinit,v
 git remote set-url origin git@github.com:auser/auser.ruhoh.com.gitgit push origin master,V
  ,v
 :syntax enable,v
@@ -38,7 +49,6 @@ fff,v
 			margin-bottom: 20px;,V
 1,v
 2,v
-,V
 },V
 .gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {  background: -moz-linear-gradient(top, @color1, @color2) @extra;  background: -webkit-gradient(@type, @pos1, @pos2, from(@color1), to(@color2)) @extra;  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=@color1, endColorstr=@@color2)";,V
 	background-image: linear-gradient(@origin, @start, @stop);,V
@@ -88,13 +98,3 @@ t,v
 _,v
 .bg-gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
 black,v
-.box_sizing (@type: border-box) {	-webkit-box-sizing: @type;	-moz-box-sizing:    @type;	box-sizing:         @type;}.bg_gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
-// =bg_gradient($color1, $color2, $pos1: left top, $pos2: left bottom, $type: linear, $extra: ""),V
-start,v
-  background: @color;  background: -webkit-gradient(linear,                               left bottom,                               left top,                               color-stop(0, @start),                               color-stop(1, @stop));  background: -ms-linear-gradient(bottom,                                  @start,                                  @stop);  background: -moz-linear-gradient(center bottom,                                   @start 0%,                                   @stop 100%);},v
-vendor,v
-@import "vendor/elements";,V
-x-sizing (@type: border-box) {	-webkit-box-sizing: @type;	-moz-box.-sizing:    @type;	box-sizing:         @type;},V
--moz-box-sizing: $value  -webkit-box-sizing: $value    box-sizing: $value,V
-_mixins,v
-lib,v

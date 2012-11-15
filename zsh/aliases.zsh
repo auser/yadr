@@ -44,7 +44,6 @@ alias ze='vi ~/.zshrc'
 alias zr='source ~/.zshrc'
 
 # Git Aliases
-alias g='git'
 alias gs='git status'
 alias gstsh='git stash'
 alias gst='git stash'
@@ -98,7 +97,6 @@ alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 alias gt='git t'
-alias gupdateall="find . -type d -maxdepth 1 -exec bash -c \"cd '{}' && if [ -d \\$PWD'/.git' ]; then echo 'updating ' \\$PWD; git pull origin master 2>/dev/null; fi\" \;"
 alias gbg='git bisect good'
 alias gbb='git bisect bad'
 
@@ -136,8 +134,6 @@ alias sgi='sudo gem install --no-ri --no-rdoc'
 # to find the note called 'todo'
 alias todo='open nvalt://find/todo'
 
-# YADR Bin
-alias emacs='open -a "/Applications/Emacs.app"'
 # Forward port 80 to 3000
 alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 80 in'
 
