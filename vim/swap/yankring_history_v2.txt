@@ -1,4 +1,7 @@
+echo "OVERLOADING",V
+$PATH,V
 ,V
+for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file,v
 dependency,v
     "grunt": "~0.3.17",V
 		"grunt,V
@@ -95,6 +98,3 @@ simple,v
 /usr/local/share/npm/bin,v
 export PATH=$PATH:/usr/local/share/npm/bin,V
 echo "HI HI HI",V
-    position: relative;,V
-npm install -g punch,v
-/,v
