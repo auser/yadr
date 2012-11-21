@@ -1,3 +1,4 @@
+. ~/nvm/nvm.sh,v
 random,v
   file_operation(Dir.glob('tmux.conf')) if want_to_install?('tmux configuration'),V
 plugin,v
@@ -97,4 +98,3 @@ t,v
 @,v
 _,v
 .bg-gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
-black,v
