@@ -1,3 +1,34 @@
+# Ring the bell if any background window rang a bellset -g bell-action any# Default termtype. If the rcfile sets $TERM, that overrides this value.set -g default-terminal screen-256color# set -g default-terminal "screen-256color"#set-option -g default-command "reattach-to-user-namespace -l $SHELL -l"# Keep your finger on ctrl, or don'tbind-key ^D detach-client# Create splits and vertical splitsbind-key v split-window -hbind-key ^V split-window -hbind-key s split-windowbind-key ^S split-window# Pane resize in all four directions using vi bindings.# Can use these raw but I map them to shift-ctrl-<h,j,k,l> in iTerm.bind-key J resize-pane -D 10bind-key K resize-pane -U 10bind-key H resize-pane -L 10bind-key L resize-pane -R 10# Use vi keybindings for tmux commandline input.# Note that to get command mode you need to hit ESC twice...set -g status-keys vi # Use vi keybindings in copy and choice modessetw -g mode-keys vi# # easily toggle synchronization (mnemonic: e is for echo)# sends input to all panes in a given window.bind e setw synchronize-panes onbind E setw synchronize-panes off# set first window to index 1 (not 0) to map more to the keyboard layout...set -g base-index 1# color scheme (styled as vim-powerline)set -g status-left-length 52set -g status-right-length 451set -g status-fg whiteset -g status-bg colour234set -g pane-border-fg colour245set -g pane-active-border-fg colour39set -g message-fg colour16set -g message-bg colour221set -g message-attr boldset -g status-left '#[fg=colour235,bg=colour252,bold] ❐ #S #[fg=colour252,bg=colour238,nobold]⮀#[fg=colour245,bg=colour238,bold] #(whoami) #[fg=colour238,bg=colour234,nobold]⮀'set -g window-status-format "#[fg=colour235,bg=colour252,bold] #I #W "#set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour25,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"#set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=black,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=black,bg=colour39,noreverse,bold] #I: #W #[fg=colour39,bg=colour234,nobold]⮀"# Patch for OS X pbpaste and pbcopy under tmux.# set-option -g default-command "reattach-to-user-namespace -l zsh"# Screen like bindingunbind C-bset -g prefix C-a# No escape time for vi modeset -sg escape-time 0# Screen like binding for last windowunbind lbind C-a last-window# Bigger historyset -g history-limit 10000,V
+config.assets.enabled ,v
+config.assets.enabled =,v
+config.,v
+120,v
+.,v
+33,v
+120		,v
+33.33.33.120		zen.dev33.33.33.120		manage.zen.dev,V
+33.33.33.120		zen.dev3,v
+1,V
+192.168.33.10		zen.dev,V
+	,v
+v,v
+e,v
+d,v
+n,v
+z,v
+manage,v
+3,v
+zen,v
+#,v
+  config.vm.,V
+    "modifyvm", :id,,V
+,V
+  config.vm.provision :shell, :path => ,V
+j,V
+git@github.com:att-innovate/mhealth.git,v
+ ,v
+base,v
+\curl -L https://get.rvm.io | bash -s stable --rails,v
 . ~/nvm/nvm.sh,v
 random,v
   file_operation(Dir.glob('tmux.conf')) if want_to_install?('tmux configuration'),V
@@ -6,12 +37,10 @@ for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file,V
 for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file,v
 echo "prompt skwp" > ~/.zsh.after/prompt.zsh,v
 echo $yadr,V
-,V
 autoload -U promptinit,V
 :,v
 command not found: promptinit,v
 git remote set-url origin git@github.com:auser/auser.ruhoh.com.gitgit push origin master,V
- ,v
 :syntax enable,v
 ",v
 8,v
@@ -69,32 +98,3 @@ s,v
  */,V
 /** * The following 2 mixins would ideally be defined inside the .grid-container * mixin since it isn't relevant in any other scope. There is a bug in LESS * that makes it impossible to nest mixins that don't take arguments so they * are defined globally for now.,V
  * The first grid inside another grid.,V
-/**,V
- * The last grid inside another grid.,V
- * Make an element clear all floats.,V
-.transition(...) {	@props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;	-moz-transition: @props;	-o-transition: @props;	-webkit-transition: @props;	transition: @props;,V
-.columns-width(@n, @width: @grid-width) {,V
-t1, @t2, @t3, @t4, @t5;,v
-@t1, @t2: "", @t3: "", @t4: "", @t5: "") {,v
-.transition(@t1) {	-moz-transition: @t1;	-o-transition: @t1;	-webkit-transition: @t1;	transition: @t1;,V
-linear,v
-opacity ,v
-:0,V
-                                   @color2 100%);,V
-                                   @color1 0%,,V
-  background: -moz-linear-gradient(center bottom,,V
-                                  @color2);,V
-                                  @color1,,V
-  background: -ms-linear-gradient(bottom,,V
-                               top(@color2));,V
-	background: @color1;d4d  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),,V
-$,v
-g,v
-b,v
-d,v
-n,v
-e,v
-t,v
-@,v
-_,v
-.bg-gradient(@color1, @color2, @pos1: left top, @pos2: left bottom, @type: linear, @extra: "") {	background: @color1;  background: -webkit-gradient(@type,                               @pos2,                               @pos1,                               from(@color1),                               top(@color2));  background: -ms-linear-gradient(bottom,                                  @color1,                                  @color2);  background: -moz-linear-gradient(center bottom,                                   @color1 0%,                                   @color2 100%);}:0,V
