@@ -15,6 +15,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"##############################################################################
+"" Easier split navigation
+"##############################################################################
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Git
+
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
 

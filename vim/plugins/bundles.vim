@@ -76,7 +76,7 @@ nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
 " Trinity coding
-Bundle 'wesleyche/trinity'
+"Bundle 'wesleyche/trinity'
 
 " - Bundle 'msanders/snipmate.vim'
 Bundle 'sjl/splice.vim'
@@ -128,6 +128,10 @@ autocmd FileType gitcommit set tw=68 spell
     au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
     au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+" Tagbar
+		Bundle 'majutsushi/tagbar'
+		Bundle 'vim-scripts/taglist.vim'
+
 " Clojure
     Bundle 'zaiste/VimClojure'
 
@@ -142,3 +146,4 @@ autocmd FileType gitcommit set tw=68 spell
     Bundle 'w0ng/vim-hybrid'
     Bundle 'cschlueter/vim-wombat'
     Bundle 'CSApprox'
+

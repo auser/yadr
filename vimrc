@@ -46,9 +46,9 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 :so $HOME/.vim/plugins/bundles.vim
 
-if &diff
-  colorscheme inkpot
-endif
+"if &diff
+  "colorscheme inkpot
+"endif
 
 " Yank from current cursor position to end of line
 map Y y$
