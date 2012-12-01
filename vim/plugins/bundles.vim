@@ -4,7 +4,7 @@ call vundle#rc()
 
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " General
@@ -68,6 +68,10 @@ nmap <LocalLeader>rs vip<LocalLeader>rs<CR>
 " Coding
 Bundle 'majutsushi/tagbar'
 nmap <leader>t :TagbarToggle<CR>
+let g:tagbar_usearrows = 1
+
+Bundle "ervandew/supertab"
+let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'gregsexton/gitv'
 
@@ -104,7 +108,7 @@ autocmd FileType gitcommit set tw=68 spell
 
     autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
     autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-		
+
 " HTML
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
@@ -129,8 +133,8 @@ autocmd FileType gitcommit set tw=68 spell
     au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Tagbar
-		Bundle 'majutsushi/tagbar'
 		Bundle 'vim-scripts/taglist.vim'
+
 
 " Clojure
     Bundle 'zaiste/VimClojure'
