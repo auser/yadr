@@ -4,7 +4,7 @@ call vundle#rc()
 
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " General
@@ -68,6 +68,10 @@ nmap <LocalLeader>rs vip<LocalLeader>rs<CR>
 " Coding
 Bundle 'majutsushi/tagbar'
 nmap <leader>t :TagbarToggle<CR>
+let g:tagbar_usearrows = 1
+
+Bundle "ervandew/supertab"
+let g:SuperTabDefaultCompletionType = "context"
 
 Bundle 'gregsexton/gitv'
 
@@ -76,7 +80,7 @@ nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
 " Trinity coding
-Bundle 'wesleyche/trinity'
+"Bundle 'wesleyche/trinity'
 
 " - Bundle 'msanders/snipmate.vim'
 Bundle 'sjl/splice.vim'
@@ -104,7 +108,7 @@ autocmd FileType gitcommit set tw=68 spell
 
     autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
     autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-		
+
 " HTML
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
@@ -128,6 +132,10 @@ autocmd FileType gitcommit set tw=68 spell
     au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
     au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
+" Tagbar
+		Bundle 'vim-scripts/taglist.vim'
+
+
 " Clojure
     Bundle 'zaiste/VimClojure'
 
@@ -142,3 +150,4 @@ autocmd FileType gitcommit set tw=68 spell
     Bundle 'w0ng/vim-hybrid'
     Bundle 'cschlueter/vim-wombat'
     Bundle 'CSApprox'
+

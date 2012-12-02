@@ -15,6 +15,16 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+"##############################################################################
+"" Easier split navigation
+"##############################################################################
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+
+" Git
+
 " Clear highlighted searches
 nmap <silent> ,/ :nohlsearch<CR>
 
@@ -39,17 +49,23 @@ let g:syntastic_mode_map={ 'mode': 'active',
                      \ 'passive_filetypes': ['html'] }
 
 " Trinity
-" Open and close all the three plugins on the same time 
-nmap <F8>  :TrinityToggleAll<CR> 
+" Open and close all the three plugins on the same time
+nmap <F8>  :TrinityToggleAll<CR>
 
-" Open and close the Source Explorer separately 
-nmap <F9>  :TrinityToggleSourceExplorer<CR> 
+" Open and close the Source Explorer separately
+nmap <F9>  :TrinityToggleSourceExplorer<CR>
 
-" Open and close the Taglist separately 
-nmap <F10> :TrinityToggleTagList<CR> 
+" Open and close the Taglist separately
+nmap <F10> :TrinityToggleTagList<CR>
 
-" Open and close the NERD Tree separately 
-nmap <F11> :TrinityToggleNERDTree<CR> 
+" Open and close the NERD Tree separately
+nmap <F11> :TrinityToggleNERDTree<CR>
 
 "Enable syntax plugin, yo
 syntax enable
+
+" Clear all trailing whitespace
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Remove all trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
