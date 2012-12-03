@@ -1,6 +1,13 @@
 ;; el-get
+
+(setq this-dir (file-name-directory load-file-name))
+;(add-to-list 'load-path (concat (file-name-as-directory "auser"))
+(add-to-list 'load-path (concat this-dir "auser"))
+
 (require 'auser-el-get)
 (require 'auser-helpers)
+
+(require 'auser-foundation)
 
 ;; Display
 (require 'auser-display)

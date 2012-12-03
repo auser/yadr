@@ -5,8 +5,8 @@
 ;starter-kit starter-kit-lisp starter-kit-eshell
 ;                       starter-kit-bindings scpaste
 ;                       clojure-mode clojure-test-mode ess
-;                       paredit 
-;                       markdown-mode yaml-mode tuareg                                                                                      
+;                       paredit
+;                       markdown-mode yaml-mode tuareg
 ;                       marmalade oddmuse scpaste
 (setq el-get-sources
       '(
@@ -19,7 +19,7 @@
         (:name el-get)
         (:name package)
         ;;
-        (:name ecb)
+;;        (:name ecb)
         (:name nav
                :description "Emacs mode for filesystem navigation"
                :type git
@@ -37,6 +37,8 @@
         ; (:name nxhtml)
         ;; major mode for haml
         (:name haml-mode)
+        ; nrepl
+        (:name nrepl)
         ;; major mode for markdown markup
         (:name markdown-mode)
         ;; YAML
@@ -91,7 +93,8 @@
         ; ;; add smooth scrolling of buffers
         (:name smooth-scroll)
         ; ;; undo history in a tree like vim, try C-x u
-        (:name undo-tree)
+        ;;(:name undo-tree)
+        (:name lusty-explorer)
         (:name flymake-ruby)
         (:name dired+)
         (:name coffee-mode)
@@ -102,7 +105,7 @@
   (interactive)
   ;; use a shallow clone for all git packages
   (setq el-get-git-shallow-clone t)
-  
+
   (el-get 'sync '(el-get package))
   (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))

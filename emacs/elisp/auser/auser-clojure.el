@@ -1,13 +1,16 @@
 (add-hook 'clojure-mode-hook
           (lambda ()
             (setq inferior-lisp-program "lein repl")))
-            
+
 (add-hook 'nrepl-interaction-mode-hook
   'nrepl-turn-on-eldoc-mode)
 (setq nrepl-popup-stacktraces nil)
-(add-to-list 'same-window-buffer-names "*nrepl*") 
+(add-to-list 'same-window-buffer-names "*nrepl*")
 
 (setq inferior-lisp-program "java -cp clojure-1.3.0.jar clojure.main")
+
+(global-set-key
+	(kbd "C-c C-j") 'clojure-jack-in)
 
 (defun code-mode (x)
   (mapcar (lambda (hook) (add-hook hook x))
