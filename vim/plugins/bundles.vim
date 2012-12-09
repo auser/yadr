@@ -79,6 +79,7 @@ Bundle 'scrooloose/nerdcommenter'
 nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
+
 " Trinity coding
 "Bundle 'wesleyche/trinity'
 
@@ -138,6 +139,7 @@ autocmd FileType gitcommit set tw=68 spell
 
 " Clojure
     Bundle 'zaiste/VimClojure'
+    Bundle 'tpope/vim-foreplay'
 
     let vimclojure#HighlightBuiltins=1
     let vimclojure#ParenRainbow=0
