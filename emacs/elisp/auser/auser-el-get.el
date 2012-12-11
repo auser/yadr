@@ -7,8 +7,8 @@
 ;                       paredit
 ;                       markdown-mode yaml-mode tuareg
 ;                       marmalade oddmuse scpaste
-(add-to-list 'load-path (concat (file-name-as-directory load-file-name) "el-get" "el-get"))
 
+(add-to-list 'load-path (concat (file-name-directory load-file-name) "el-get"))
 (setq el-get-sources
       '(
         (:name buffer-move      ; have to add your own keys
@@ -114,9 +114,18 @@
   (setq my-packages (mapcar 'el-get-source-name el-get-sources))
   (el-get 'sync my-packages))
 
-(if (require 'el-get nil t)
-    (sync-packages)
-    nil)
+  ;(let* ((package "el-get")
+  ;      (buf      (switch-to-buffer "*el-get bootstrap*"))
+  ;      (pdir     (concat (file-name-directory load-file-name) "el-get")))
+  ; 
+  ;      (print (concat "Loading..." pdir package))
+  ;      (add-to-list 'load-path pdir)
+  ;      (load package)
+  ;)
 
-
+(let ((el-get-root (concat (file-name-directory load-file-name) "el-get")))
+    (if (require 'el-get nil t)
+        (sync-packages)
+        (print "Uh oh")))
+        
 (provide 'auser-el-get)

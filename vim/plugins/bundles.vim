@@ -70,6 +70,7 @@ Bundle 'majutsushi/tagbar'
 nmap <leader>t :TagbarToggle<CR>
 let g:tagbar_usearrows = 1
 
+Bundle "jtaby/Waldo"
 Bundle "ervandew/supertab"
 let g:SuperTabDefaultCompletionType = "context"
 
