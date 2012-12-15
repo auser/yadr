@@ -1,5 +1,5 @@
 ;;; bootstrap
-; (setq auser:el-get-packages (loop for src in el-get-sources
+; (setq auser:el-get-packages (loop for src in el-get-my-sources
 ;                                   collect (el-get-source-name src)))
 ;starter-kit starter-kit-lisp starter-kit-eshell
 ;                       starter-kit-bindings scpaste
@@ -17,7 +17,7 @@
 (unless (require 'el-get nil t)
 	(url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el" (lambda (s) (goto-char (point-max)) (eval-print-last-sexp))))
 
-(setq el-get-sources
+(setq el-get-my-sources
       '(
         (:name buffer-move      ; have to add your own keys
           :after (progn ()
@@ -127,7 +127,7 @@
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
   (package-initialize)
   ;; define my packages
-  (setq my-packages (mapcar 'el-get-source-name el-get-sources))
+  (setq my-packages (mapcar 'el-get-source-name el-get-my-sources))
   (el-get 'sync my-packages))
 
 (unless (require 'el-get nil 'noerror)

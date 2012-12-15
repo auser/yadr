@@ -383,3 +383,6 @@
 [submodule "emacs/elisp/auser/el-get"]
 	path = emacs/elisp/auser/el-get
 	url = https://github.com/dimitri/el-get.git
+[submodule "emacs/emacs-live"]
+	path = emacs/emacs-live
+	url = git://github.com/overtone/emacs-live.git
