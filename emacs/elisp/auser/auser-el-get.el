@@ -28,14 +28,14 @@
         (:name el-get)
         (:name package)
         ;;
-;;        (:name ecb)
+        ;(:name cedet)
+				;(:name ecb)
         (:name nav
                :description "Emacs mode for filesystem navigation"
                :type git
                :url "git://github.com/macsf/emacs-nav.git"
                :features nav)
         (:name icomplete+)
-        ; (:name cedet)
         (:name eproject)
         (:name paredit)
         (:name sr-speedbar)
@@ -53,30 +53,31 @@
         ;; YAML
         (:name yaml-mode)
         ;; nrepl
-        ; (:name nrepl)
+        (:name nrepl)
         ;; tuareg-mode
         (:name tuareg-mode)
         ;; oddmuse
         (:name oddmuse)
         ;; major mode for clojure
-        (:name clojure-mode)
+				(:name clojure-mode)
         ;; scala
         (:name scala-mode)
         ;; ensime
-        (:name ensime
-               :description "ENhanced Scala Interaction Mode for Emacs"
-               :type github
-               :pkgname "aemoncannon/ensime"
-               :build ("sbt stage")
-               :depends scala-mode
-               :features ensime
-               :load-path ("./dist_2.9.2/elisp") ;; src/main
-               :post-init (progn
-                            (require 'ensime)
-                                                ;; scala-mode can be
-                            ;; found in the scala distribution:
-                            (require 'scala-mode-auto)
-                                                (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)))
+        ;; (:name ensime
+        ;;        :description "ENhanced Scala Interaction Mode for Emacs"
+        ;;        :type github
+        ;;        :pkgname "aemoncannon/ensime"
+        ;;        :build ("sbt stage")
+        ;;        :depends scala-mode
+        ;;        :features ensime
+        ;;        :load-path ("./dist_2.9.2/elisp") ;; src/main
+        ;;        :post-init (progn
+        ;;                     (require 'ensime)
+        ;;                                         ;; scala-mode can be
+        ;;                     ;; found in the scala distribution:
+        ;;                     (require 'scala-mode-auto)
+        ;;                                         (add-hook 'scala-mode-hook 'ensime-scala-mode-
+;;                                                          hook)))
         ;; major mode for editing CMake config files
         (:name cmake-mode)
         ;; Multiterm
@@ -107,6 +108,11 @@
         (:name flymake-ruby)
         (:name dired+)
         (:name coffee-mode)
+
+        ;; RUBY
+        (:name rinari)
+      	(:name test-unit)
+      	(:name ido-ubiquitous)
       ))
 
 (defun sync-packages ()
@@ -116,8 +122,10 @@
   (setq el-get-git-shallow-clone t)
 
   (el-get 'sync '(el-get package))
+  (require 'package)
   (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (package-initialize)
   ;; define my packages
   (setq my-packages (mapcar 'el-get-source-name el-get-sources))
   (el-get 'sync my-packages))
