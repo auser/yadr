@@ -46,6 +46,8 @@
         ; (:name nxhtml)
         ;; major mode for haml
         (:name haml-mode)
+        ;; major mode for clojure
+				(:name clojure-mode)
         ; nrepl
         (:name nrepl)
         ;; major mode for markdown markup
@@ -58,8 +60,6 @@
         (:name tuareg-mode)
         ;; oddmuse
         (:name oddmuse)
-        ;; major mode for clojure
-				(:name clojure-mode)
         ;; scala
         (:name scala-mode)
         ;; ensime
