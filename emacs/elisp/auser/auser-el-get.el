@@ -8,7 +8,15 @@
 ;                       markdown-mode yaml-mode tuareg
 ;                       marmalade oddmuse scpaste
 
-(add-to-list 'load-path (concat (file-name-directory load-file-name) "el-get"))
+(setq el-get-dir (concat (file-name-directory load-file-name) "el-get") )
+
+(add-to-list 'load-path (concat el-get-dir "/el-get"))
+
+(print (concat el-get-dir "/el-get"))
+
+(unless (require 'el-get nil t)
+	(url-retrieve "https://raw.github.com/dimitri/el-get/master/el-get-install.el" (lambda (s) (goto-char (point-max)) (eval-print-last-sexp))))
+
 (setq el-get-sources
       '(
         (:name buffer-move      ; have to add your own keys
@@ -114,18 +122,12 @@
   (setq my-packages (mapcar 'el-get-source-name el-get-sources))
   (el-get 'sync my-packages))
 
-  ;(let* ((package "el-get")
-  ;      (buf      (switch-to-buffer "*el-get bootstrap*"))
-  ;      (pdir     (concat (file-name-directory load-file-name) "el-get")))
-  ; 
-  ;      (print (concat "Loading..." pdir package))
-  ;      (add-to-list 'load-path pdir)
-  ;      (load package)
-  ;)
+(unless (require 'el-get nil 'noerror)
+	(with-current-buffer
+			(url-retrieve-synchronously
+			 "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+		(goto-char (point-max))
+		(eval-print-last-sexp)))
 
-(let ((el-get-root (concat (file-name-directory load-file-name) "el-get")))
-    (if (require 'el-get nil t)
-        (sync-packages)
-        (print "Uh oh")))
-        
+(sync-packages)
 (provide 'auser-el-get)

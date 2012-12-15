@@ -16,14 +16,14 @@ and their terminal equivalents.")
   (or (and window-system (read-kbd-macro desc))
       (or (cdr (assoc desc real-keyboard-keys))
           (read-kbd-macro desc))))
-          
+
 
 ;; Windows
 (global-set-key (key "M-<left>") 'windmove-left)          ; move to left windnow
 (global-set-key (key "M-<right>") 'windmove-right)        ; move to right window
 (global-set-key (key "M-<up>") 'windmove-up)              ; move to upper window
 (global-set-key (key "M-<down>") 'windmove-down)          ; move to downer window
-  
+
 (provide 'auser-helpers)
 
 ;; ecb
@@ -42,5 +42,5 @@ and their terminal equivalents.")
   '(ecb-tip-of-the-day nil)
   '(ecb-tree-buffer-style (quote ascii-guides)))
 
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-(auto-complete-mode)
+;(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+;(auto-complete-mode)
