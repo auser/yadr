@@ -1,0 +1,229 @@
+#!/bin/bash
+
+#------------------------------------------------------------------------------
+# Helpers
+#
+err() {
+    echo -e >&2 ERROR: $@\\n
+}
+
+die() {
+    err $@
+    exit 1
+}
+
+has() {
+    # eg. has command update
+    local kind=$1
+    local name=$2
+
+    type -t $kind:$name | grep -q function
+}
+
+#------------------------------------------------------------------------------
+# Command handlers
+#
+command:update-image() {
+    docker pull $FINAL_IMAGE
+}
+
+help:update-image() {
+    echo Pull the latest $FINAL_IMAGE .
+}
+
+command:update-script() {
+    local newfile=$( mktemp )
+    if docker run $FINAL_IMAGE > $newfile; then
+        if [[ -s $newfile ]]; then
+            if ! cmp -s $0 $newfile; then
+                echo -n Updating $0 '... '
+                chmod 755 $newfile && mv $newfile $0 && echo ok
+            else
+                echo $0 is up to date.
+            fi
+        fi
+    fi
+    rm -f $newfile
+}
+
+help:update-image() {
+    echo Update $0 from $FINAL_IMAGE .
+}
+
+command:update() {
+    command:update-image && command:update-script
+}
+
+install-packages() {
+    local installer=$1
+    shift
+
+    CONTAINER=rpxc-temp-$$
+    docker rm -f $CONTAINER >/dev/null 2>/dev/null
+    set -e
+    docker run -ti --name $CONTAINER $FINAL_IMAGE $installer "$@"
+    docker commit $CONTAINER $FINAL_IMAGE
+    docker rm -f $CONTAINER
+    echo Updated image: $FINAL_IMAGE.
+}
+
+command:install-debian() {
+    install-packages install-debian "$@"
+}
+
+help:install-debian() {
+    echo usage: rpxc install-debian [--update] package \[packages...\]
+    echo Install native debian packages into $FINAL_IMAGE .
+    echo Use --update to run apt-get update beforehand.
+}
+
+command:install-raspbian() {
+    install-packages install-raspbian "$@"
+}
+
+help:install-raspbian() {
+    echo usage: rpxc install-raspbian [--update] package \[packages...\]
+    echo Install raspbian packages into the sysroot of $FINAL_IMAGE .
+    echo Use --update to run apt-get update beforehand.
+}
+
+help:update() {
+    echo Pull the latest $FINAL_IMAGE, and then update $0 from that.
+}
+
+command:help() {
+    if [[ $# != 0 ]]; then
+        if ! has command $1; then
+            err \"$1\" is not an rpxc command
+            command:help
+        elif ! has help $1; then
+            err No help found for \"$1\"
+        else
+            help:$1
+        fi
+    else
+        cat >&2 <<ENDHELP
+usage: rpxc command [args]
+
+By default, runs the given command in an rpxc container.
+
+Builtin commands:
+    install-debian
+    install-raspbian
+    update-image
+    update-script
+    update
+
+For command-specific help: rpxc help <command>
+ENDHELP
+    fi
+}
+
+#------------------------------------------------------------------------------
+# Option processing
+#
+while [[ $# != 0 ]]; do
+    case $1 in
+
+        --)
+            break
+            ;;
+
+        --args)
+            ARG_ARGS="$2"
+            shift 2
+            ;;
+
+        --config)
+            ARG_CONFIG="$2"
+            shift 2
+            ;;
+
+        --image)
+            ARG_IMAGE="$2"
+            shift 2
+            ;;
+
+        -*)
+            err Unknown option \"$1\"
+            command:help
+            exit
+            ;;
+
+        *)
+            break
+            ;;
+
+    esac
+done
+
+# The precedence for options is:
+# 1. command-line arguments
+# 2. environment variables
+# 3. defaults
+
+# Source the config file if it exists
+DEFAULT_CONFIG=~/.rpxc
+FINAL_CONFIG=${ARG_CONFIG-${RPXC_CONFIG-$DEFAULT_CONFIG}}
+
+[[ -f "$FINAL_CONFIG" ]] && source "$FINAL_CONFIG"
+
+# Set the docker image
+DEFAULT_IMAGE=sdthirlwall/raspberry-pi-cross-compiler
+FINAL_IMAGE=${ARG_IMAGE-${RPXC_IMAGE-$DEFAULT_IMAGE}}
+
+# Set the docker run extra args (if any)
+FINAL_ARGS=${ARG_ARGS-${RPXC_ARGS}}
+
+# If we are not running via boot2docker
+if [ -z $DOCKER_HOST ]; then
+    USER_IDS="-e RPXC_UID=$( id -u ) -e RPXC_GID=$( id -g )"
+fi
+
+#------------------------------------------------------------------------------
+# Command-line processing
+#
+if [[ $# == 0 ]]; then
+    command:help
+    exit
+fi
+
+case $1 in
+
+    --)
+        # Everything after this is the command-line to be executed
+        shift
+        ;;
+
+    *)
+        # If this is a builtin command, execute it, otherwise fall through
+        if has command $1; then
+            command:$1 "${@:2}" # array slice skipping first element
+            exit $?
+        fi
+        ;;
+
+esac
+
+#------------------------------------------------------------------------------
+# Now, finally, run the command in a container
+#
+docker run -i -t --rm \
+    -v $PWD:/build \
+    -v $PWD:/rpxc/sysroot/build \
+    $USER_IDS \
+    $FINAL_ARGS \
+    $FINAL_IMAGE "$@"
+
+################################################################################
+#
+#   This image is not intended to be run manually.
+#
+#   To install the rpxc helper, run the following commands:
+#
+#       docker run sdthirlwall/raspberry-pi-cross-compiler > rpxc
+#       chmod +x rpxc
+#
+#   You may then wish to move rpxc to somewhere in your path.
+#
+################################################################################
