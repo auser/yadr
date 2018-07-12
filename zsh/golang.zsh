@@ -1,9 +1,23 @@
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
+echo "Loading here..."
+# export GOENV_ROOT="$HOME/.goenv"
+# export PATH="$GOENV_ROOT/bin:$PATH"
 
 # export GOROOT=$HOME/go
-export GOBIN=$GOROOT/bin
-export PATH=$PATH:$GOROOT/bin
-export GOPATH=$HOME/go
+# export GOBIN=$GOROOT/bin
+# export PATH=$PATH:$GOROOT/bin
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
-eval "$(goenv init -)"
+# eval "$(goenv init -)"
+eval "$(direnv hook $SHELL)"
+
+[[ -s ~/.gvm/scripts/gvm ]] && . ~/.gvm/scripts/gvm
+
+[[ -f /usr/local/bin/direnv ]] && eval "$(direnv hook $SHELL)"
+
+use_go(){
+ . $GVM_ROOT/scripts/gvm-default
+ gvm use $1
+}
+
+use_go 1.9.2
