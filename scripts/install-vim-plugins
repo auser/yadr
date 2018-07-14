@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -euC
+
+echo "===> nvim PlugInstall..."
+/usr/bin/nvim +PlugInstall +qall
+# /usr/bin/nvim --noplugin -u NONE -N \
+#   +"set shm+=WAFI" \
+#   +'filetype plugin indent on' \
+#   +'packloadall!' \
+#   +':silent :PlugInstall' +':qa'
+
+echo "===> nvim GoUpdateBinaries..."
+/usr/bin/nvim +GoUpdateBinaries +qall
+# /usr/bin/nvim --noplugin -u NONE -N \
+#   +"set shm+=WAFI" \
+#   +'filetype plugin indent on' \
+#   +'packloadall!' \
+#   +':silent :GoUpdateBinaries' +':qa'
+
+# vim:ts=2:sts=2:sw=2:et

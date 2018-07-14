@@ -1,0 +1,1 @@
+/Users/auser/.vim/plugged/gocode/vim/autoload/gocomplete.vim
