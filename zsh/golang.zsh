@@ -16,6 +16,6 @@ use_go(){
  . $GVM_ROOT/scripts/gvm-default
  gvm use $1
 }
-git clone git@github.com:olebedev/go-starter-kit.git $GOPATH/src/github.com/
-# export GOPATH="$HOME/go"
-# export PATH="$GOPATH/bin:$PATH"
+# git clone git@github.com:olebedev/go-starter-kit.git $GOPATH/src/github.com/
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
