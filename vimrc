@@ -63,6 +63,13 @@ Plug 'tclh123/vim-thrift'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 
+Plug 'mattn/emmet-vim'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
+
+
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'altercation/vim-colors-solarized'
@@ -684,6 +691,19 @@ au FileType javascript set shiftwidth=2
 au FileType javascript set softtabstop=2
 au FileType javascript set tabstop=2
 
+" Start autocompletion after 4 chars
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+" Don't show YCM's preview window [ I find it really annoying ]
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+let g:prettier#autoformat = 1
+
+"let g:user_emmet_mode='n'    "only enable normal mode functions.
+"let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'    "enable all function in all mode.
+
 "----------------------------------------------
 " Language: JSON
 "----------------------------------------------
@@ -803,3 +823,106 @@ au FileType yaml set tabstop=2
 
 let g:acp_enableAtStartup = 0
 
+" CoffeeScript {{{
+    au FileType coffee setl foldmethod=indent nofoldenable
+    au FileType coffee setl nosmartindent
+
+    "au FileType coffee nnoremap <buffer> <leader>r :call vice#polyglot#run('coffee -s', 'stdin')<cr>
+    au FileType coffee nnoremap <buffer> <leader>c :CoffeeCompile vert<cr>
+    au FileType coffee nnoremap <buffer> <leader>t :!cake test<cr>
+
+    " hi link coffeeFunction  Function
+    " hi link coffeeMethod    Function
+    " hi link coffeeObjAssign Statement
+" }}}
+
+" Go {{{
+    let g:go_fmt_autosave = 1
+    let g:go#use_vimproc = 1
+    au FileType go nnoremap <buffer> gd <Plug>(go-def)
+    au FileType go nnoremap <buffer> <Leader>ds <Plug>(go-def-split)
+    au FileType go nnoremap <buffer> <Leader>dt <Plug>(go-def-tab)
+    au FileType go nnoremap <buffer> <Leader>dv <Plug>(go-def-vertical)
+    au FileType go nnoremap <buffer> <Leader>gb <Plug>(go-doc-browser)
+    au FileType go nnoremap <buffer> <Leader>d <Plug>(go-doc)
+    au FileType go nnoremap <buffer> <Leader>i <Plug>(go-info)
+    au FileType go nnoremap <buffer> <Leader>gv <Plug>(go-doc-vertical)
+    au FileType go nnoremap <buffer> <leader>b  <Plug>(go-build)
+    au FileType go nnoremap <buffer> <leader>t  <Plug>(go-test)
+    "au FileType go nnoremap <buffer> <leader>r  :call vice#polyglot#run('go run')<cr>
+
+    "if has('nvim') || v:version >= 800
+        "au FileType go call vice#ForceActivateAddons([
+            "\ 'github:zchee/deoplete-go'
+        "\ ])
+    "endif
+" }}}
+
+" Haskell {{{
+    "au FileType haskell call vice#ForceActivateAddons([
+        "\ 'github:wlangstroth/vim-haskell',
+    "\ ])
+
+    "au FileType haskell nnoremap <buffer> <leader>r :call vice#polyglot#run('runhaskell', 'stdin')<cr>
+
+    "if g:vice.polyglot.enable_ghcmod
+        "au FileType haskell call vice#ForceActivateAddons([
+            "\ 'github:eagletmt/ghcmod-vim',
+        "\ ])
+
+        "au FileType haskell nnoremap <buffer> te :call vice#polyglot#ghcmod_expand()<cr>
+        "au FileType haskell nnoremap <buffer> ti :call vice#polyglot#ghcmod_info()<cr>
+        "au FileType haskell nnoremap <buffer> tn :call vice#polyglot#ghcmod_type_insert()<cr>
+        "au FileType haskell nnoremap <buffer> tt :call vice#polyglot#ghcmod_type()<cr>
+
+        "au BufWritePost *.hs call vice#polyglot#ghcmod_check_and_lint()
+        "au CursorMoved  *.hs call vice#polyglot#ghcmod_type_clear()
+
+        "let g:ghcmod_hlint_options = ['--ignore=Redundant $']
+        "let g:syntastic_haskell_checkers = []
+    "endif
+"" }}}
+
+" HTML {{{
+    let html_no_rendering=1
+" "}}}
+
+" Javascript {{{
+    " au FileType javascript hi link javascriptBraces Text |
+    "                      \ hi link javascriptParens Text |
+    "                      \ hi link javaScriptOpSymbols Text |
+    "                      \ hi link javaScriptEndColons Text |
+    "                      \ hi link javaScriptExceptions Statement |
+    "                      \ hi link javaScriptPrototype Text
+    "
+
+    au FileType javascript command! -buffer -bang Uglify call vice#polyglot#uglify(<bang>0)
+    au FileType javascript nnoremap <buffer> <leader>r :call vice#polyglot#run('node')<cr>
+
+    let g:used_javascript_libs = 'backbone,chai,jquery,react,underscore'
+    let g:jsx_ext_required     = 0 " Allow JSX in normal JS files
+" }}}
+
+" JSON {{{
+    au FileType json setl nobomb
+    au FileType json setl conceallevel=0
+" }}}
+
+" Lua/Moonscript {{{
+    au FileType lua  nnoremap <buffer> <leader>r :call vice#polyglot#run('lua', 'stdin')<cr>
+    au FileType moon nnoremap <buffer> <leader>r :call vice#polyglot#run('moon')<cr>
+" }}}
+
+" Python {{{
+    let g:python_highlight_all = 1
+    let g:python_show_sync = 1
+    let g:python_print_as_function = 1
+    let g:virtualenv_auto_activate = 1
+    let g:virtualenv_directory = $VIRTUALENVS_DIR
+    au FileType python setlocal nosmartindent
+    au FileType python setlocal nocindent
+" }}}
+
+" Clighter {{{
+    let g:clighter_autostart = 0
+" }}}
