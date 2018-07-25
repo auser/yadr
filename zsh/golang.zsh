@@ -19,3 +19,5 @@ use_go(){
 # git clone git@github.com:olebedev/go-starter-kit.git $GOPATH/src/github.com/
 export GOPATH="$HOME/go"
 export PATH="$GOPATH/bin:$PATH"
+
+autoload -U compinit && compinit

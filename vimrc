@@ -64,11 +64,12 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 
 Plug 'mattn/emmet-vim'
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
 
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue'] }
-
 
 " Colorschemes
 Plug 'NLKNguyen/papercolor-theme'
@@ -85,6 +86,15 @@ else
 endif
 
 call plug#end()
+
+"----------------------------------------------
+" Bug
+"----------------------------------------------
+if has('gui_macvim')
+  let $PYTHONHOME="/Users/auser/anaconda/envs/default/"
+  set pythonhome=$PYTHONHOME
+endif
+
 
 "----------------------------------------------
 " General settings
@@ -812,6 +822,11 @@ au FileType vim set expandtab
 au FileType vim set shiftwidth=4
 au FileType vim set softtabstop=4
 au FileType vim set tabstop=4
+
+"----------------------------------------------
+" Language: elixir
+"----------------------------------------------
+au Filetype elixir set expandtab
 
 "----------------------------------------------
 " Language: YAML

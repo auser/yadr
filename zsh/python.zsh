@@ -28,4 +28,4 @@ source activate default
 # alias v.cd='cdvirtualenv'
 # alias v.lssitepackages='lssitepackages'
 #
-# export PYTHONPATH=/usr/local/lib/python:$PYTHONPATH
+export PYTHONPATH=/Users/auser/anaconda/envs/default/bin/python:$PYTHONPATH
