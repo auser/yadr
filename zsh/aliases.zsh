@@ -59,7 +59,7 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
 
-alias em="open -a /Applications/Emacs.app/Contents/MacOS/Emacs $@"
+# alias em="open -a /Applications/Emacs.app/Contents/MacOS/Emacs $@"
 
 # mimic vim functions
 alias :q='exit'
