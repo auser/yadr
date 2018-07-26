@@ -4,7 +4,10 @@
 /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -e "(if (> (length (frame-list)) 1) 't)" 2> /dev/null | grep t &> /dev/null
 
 if [ "$?" -eq "1" ]; then
- /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -a '' -nqc "$@" &> /dev/null
+ open -a "/Applications/Emacs.app/Contents/MacOS/Emacs" -n "$@"
+ exit
 else
- /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nq "$@" &> /dev/null
+  open -a "/Applications/Emacs.app/Contents/MacOS/Emacs" -n "$@"
+#  open -a /Applications/Emacs.app/Contents/MacOS/Emacs.app -nq "$@" &> /dev/null
+ exit
 fi
