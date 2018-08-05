@@ -4,7 +4,7 @@ alias start_eos='docker run --rm --name eosio -p 8888:8888 -p 9876:9876 -v /tmp/
 alias stop_eos='docker ps | grep eos awk "{print $1}" | xargs docker kill'
 
 export PATH="$HOME/Development/eos/open-source/eos/build/tools:$PATH"
-export PATH="$HOME/Development/eos/open-source/eos/build/programs/eosio-abigen:$PATH"
+export PATH="/usr/local/eosio/bin:$PATH"
 
 # export DC_EOS="/Users/auser/Development/eos/open-source/eos/Docker/docker-compose.yml"
 # alias cleos='docker-compose -f $DC_EOS exec keosd /opt/eosio/bin/cleos -u http://nodeosd:8888 --wallet-url http://localhost:8900'
