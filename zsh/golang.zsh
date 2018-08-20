@@ -22,4 +22,4 @@ export PATH="$GOPATH/bin:$PATH"
 
 autoload -U compinit && compinit
 
-use_go 1.9.2
+# use_go 1.9.2
