@@ -15,3 +15,4 @@ vim/sessions
 bin/subl
 tags
 vim/plugged/
+bin/antlr-4.7-complete.jar
