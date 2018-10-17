@@ -2,3 +2,6 @@
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto.git
   ignore = dirty
+[submodule "hammerspoon"]
+	path = hammerspoon
+	url = https://github.com/ashfinal/awesome-hammerspoon.git
