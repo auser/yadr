@@ -147,6 +147,7 @@ def install_rvm_binstubs
   puts "bundle exec again! Please use bundle --binstubs and RVM"
   puts "will automatically use those bins after cd'ing into dir."
   puts "======================================================"
+  run %{ curl -sSL https://get.rvm.io | bash -s stable --ruby }
   run %{ chmod +x $rvm_path/hooks/after_cd_bundler }
   puts
 end
@@ -173,7 +174,8 @@ def install_homebrew
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
   run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher ghi}
-  run %{brew install macvim --with-override-system-vim --with-lua --with-luajit}
+  run %{brew install macvim direnv}
+  run %{brew cask install google-cloud-sdk alfred anaconda hammerspoon}
   puts
   puts
 end

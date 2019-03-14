@@ -2,13 +2,13 @@
 # export WORKON_HOME=$HOME/.virtualenvs
 # export PYTHONSTARTUP=~/.pythonrc
 
-export PYENV_ROOT="$HOME/.pyenv"
-export ANACONDA_ROOT="$HOME/anaconda"
+#export PYENV_ROOT="$HOME/.pyenv"
+export ANACONDA_ROOT="/usr/local/anaconda3"
 export DEFAULT_PYTHON="$ANACONDA_ROOT/envs/default/bin"
 export PATH="$ANACONDA_ROOT/bin:$PATH"
 #if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
-source activate default
+#source activate default
 
 # eval (env _PIPENV_COMPLETE=source-zsh pipenv)
 # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
