@@ -13,6 +13,7 @@ pathAppend() {
 PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++{if (NR > 1) printf ORS; printf $a[$1]}')
 
 pathAppend "./bin"
+pathAppend "$HOME/.local/bin"
 pathAppend "$HOME/.yadr/bin"
 pathAppend "$HOME/.yadr/bin/yadr"
 pathAppend "./node_modules/.bin"

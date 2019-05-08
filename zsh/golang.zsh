@@ -8,7 +8,11 @@
 # eval "$(goenv init -)"
 eval "$(direnv hook $SHELL)"
 
-[[ -s ~/.gvm/scripts/gvm ]] && . ~/.gvm/scripts/gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# gvm pkgset use global
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
+export PATH=$PATH:$GOBIN
 
 [[ -f /usr/local/bin/direnv ]] && eval "$(direnv hook $SHELL)"
 
@@ -17,9 +21,11 @@ use_go(){
  gvm use $1
 }
 # git clone git@github.com:olebedev/go-starter-kit.git $GOPATH/src/github.com/
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
 
-autoload -U compinit && compinit
+#export GOPATH="$HOME/go"
+#export GOPATH=$(go env GOPATH)
+#export PATH="$GOPATH/bin:$PATH"
+#export PATH=$PATH:$GOPATH/bin
+#autoload -U compinit && compinit
 
-# use_go 1.9.2
+use_go 1.12.1
