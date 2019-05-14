@@ -126,5 +126,5 @@
 [include]
   path = .gitconfig.user
 [user]
-	name = Ari
-	email = ari@fullstack.io
+	name = Ari Lerner
+	email = alerner@amazon.com
