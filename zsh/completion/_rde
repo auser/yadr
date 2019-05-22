@@ -1,0 +1,198 @@
+#compdef rde
+
+_rde() {
+    typeset -A opt_args
+    local context state line curcontext="$curcontext"
+
+    local ret=1
+
+    _arguments -C -A "-*" \
+        '(- : *)'{-h,--help}'[get help on a specific command]:command:_rde_cmds' \
+        '(-v --verbose)'{-v,--verbose}'[verbose mode: errors, warnings and informational messages are printed]' \
+        '1: :_rde_cmds' \
+        '*::rde-cmd:->rde-cmds' \
+    && ret=0
+
+    case "$state" in
+        (rde-cmds)
+            curcontext="${curcontext%:*:*}:rde-cmd-$words[1]:"
+            case $words[1] in
+                (definition)
+                    _arguments -C \
+                            '1: :_rde_definition_cmds' \
+                            '*::definition-cmd:->definition-cmds' \
+                    && ret=0
+                    case "$state" in
+                        (definition-cmds)
+                            case $words[1] in
+                                (create)
+                                    _values '' \
+                                        '(-a --apollo)'{-a,--apollo}'[create from apollo environment]' \
+                                        '(-p --pipeline)'{-p,--pipeline}'[create from pipeline stage]' \
+                                    && ret=0
+                                ;;
+                            esac
+                        ;;
+                    esac
+                ;;
+		(:brazil)
+                    _arguments -C \
+                            '1: :_rde_brazil_cmds' \
+                            '*::brazil-cmd:->brazil-cmds' \
+                    && ret=0
+                    case "$state" in
+                        (brazil-cmds)
+                            _arguments '(-t --target)'{-t,--target}'[Build target to execute (default "release")]::target:' \
+                                       '(-i --interactive)'{-i,--interactive}'[Open a bash session after build]' \
+                            && ret=0
+                        ;;
+                    esac
+                ;;
+                (environment)
+                    _arguments -C \
+                            '1: :_rde_environment_cmds' \
+                            '*::environment-cmd:->environment-cmds' \
+                    && ret=0
+                    case "$state" in
+                        (environment-cmds)
+                            case $words[1] in
+                                (setup)
+                                    _arguments -C \
+                                        '1: :_rde_environment_setup_cmds' \
+                                        '*::environment-setup-cmd:->environment-setup-cmds' \
+                                    && ret=0
+                                ;;
+                            esac
+                        ;;
+                    esac
+                ;;
+                (stack)
+                    _arguments -C \
+                            '1: :_rde_stack_cmds' \
+                            '*::stack-cmd:->stack-cmds' \
+                    && ret=0
+                    case "$state" in
+                        (stack-cmds)
+                            case $words[1] in
+                                (exec)
+                                    _arguments \
+                                        '1:application-name:($(RDE_TEST_ENV= rde def show --filter applications 2> /dev/null))' \
+                                    && ret=0
+                                ;;
+                                (build)
+                                    _arguments \
+                                        '(-t --build-target-alias)'{-t,--build-target-alias}'[uses the specified build target alias]:build-target-aliases:($(RDE_TEST_ENV= rde def show --filter buildTargetAliases 2> /dev/null))' \
+                                        '(-c --container)'{-c,--container}'[executes the build inside a container]' \
+                                        '(-f --force)'{-f,--force}'[bypasses the smart build feature and builds all packages]' \
+                                        '*:application-names:($(RDE_TEST_ENV= rde def show --filter applications 2> /dev/null))' \
+                                    && ret=0
+                                ;;
+                                (provision|restart|start|stop)
+                                    _arguments \
+                                        '*:application-names:($(RDE_TEST_ENV= rde def show --filter applications 2> /dev/null))' \
+                                    && ret=0
+                                ;;
+                            esac
+                        ;;
+                    esac
+                ;;
+                (workflow)
+                    _arguments -C \
+                            '1: :_rde_workflow_cmds' \
+                            '*::workflow:->workflow-cmds' \
+                    && ret=0
+                    case "$state" in
+                        (workflow-cmds)
+                            case $words[1] in
+                                (run)
+                                    _arguments \
+                                        - set1 \
+                                            '(-s --step)'{-s,--step}'[The step to execute. Can be used more than once to specify multiple steps.]:step-name:($(RDE_TEST_ENV= rde def show --filter steps 2> /dev/null))' \
+                                        - set2 \
+                                            '1:workflow-name:($(RDE_TEST_ENV= rde def show --filter workflows 2> /dev/null))' \
+                                    && ret=0
+                                ;;
+                            esac
+                        ;;
+                    esac
+                ;;
+            esac
+        ;;
+    esac
+}
+
+__rde_application_values(){
+    local apps=$(RDE_TEST_ENV= rde def show --filter applications 2> /dev/null)
+    if [ -n "$apps" ]; then
+        _values '' $(echo $apps)
+    fi
+}
+
+_rde_cmds() {
+    local commands; commands=(
+        'definition:Tools that help you manipulate the RDE definition.'
+        'environment:Tools that help you manipulate the local development environment.'
+        'stack:Tools that help you manipulate the personal stack.'
+        'workflow:Tools that help you automate your development workflow.'
+        'help:Help about any command.'
+        '\:brazil:The brazil plugin for running various builds in containers.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_definition_cmds() {
+    local commands; commands=(
+        'convert:Converts an existing RDE definition from JSON to YAML form.'
+        'create:Creates or updates a RDE definition.'
+        'delete:Deletes the existing RDE definition.'
+        'show:Shows the content of the current RDE definition file.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_brazil_cmds() {
+    local commands; commands=(
+        'sandbox-build:Runs a local sandbox build of the current brazil package.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_environment_cmds() {
+    local commands; commands=(
+        'validate:Validates the local development environment.'
+        'setup:Sets up the local development environment.'
+		'clean:Removes RDE allocated resources (such as docker).'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_environment_setup_cmds() {
+    local commands; commands=(
+        'completion:Generates shell completion scripts.'
+        'ecr:Configures the ECR endpoint used by RDE.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_stack_cmds() {
+    local commands; commands=(
+        'build:Builds the personal stack.'
+        'start:Starts the personal stack.'
+        'stop:Stops the personal stack.'
+        'provision:Provisions the personal stack.'
+        'restart:Restarts the personal stack.'
+        'exec:Executes a command inside an application.'
+        'show:Shows info about the personal stack.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde_workflow_cmds() {
+    local commands; commands=(
+        'run:Run a specific workflow or step.'
+        'show:Show steps for a specific workflow.'
+    )
+    _describe -t commands 'command' commands "$@"
+}
+
+_rde "$@"
