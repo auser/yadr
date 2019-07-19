@@ -40,7 +40,8 @@ zstyle ':prezto:load' pmodule \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
-  'prompt'
+  'prompt' \
+  'autosuggestions'
 
 #
 # Editor
@@ -50,14 +51,14 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility

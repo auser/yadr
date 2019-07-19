@@ -5,4 +5,4 @@
 :benchmark: false
 :backtrace: false
 :verbose: true
-gem: --no-document
+gem: --no-document --no-ri --no-rdoc

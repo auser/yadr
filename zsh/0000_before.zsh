@@ -5,7 +5,3 @@ if [ -d $HOME/.zsh.before/ ]; then
     for config_file ($HOME/.zsh.before/*.zsh) source $config_file
   fi
 fi
-
-export ZPLUG_HOME=$HOME/.yadr/zsh/zplug
-
-source $ZPLUG_HOME/init.zsh

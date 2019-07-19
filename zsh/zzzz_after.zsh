@@ -5,4 +5,4 @@ if [ -d $HOME/.zsh.after/ ]; then
   fi
 fi
 
-zplug load --verbose
+zplug load
